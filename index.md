@@ -20,8 +20,8 @@ We regularly publish our research in top-tier conferences and journals:
 
 - **Sinan Wang, Yitong Deng, Molin Deng, Hong-Xing Yu, Junwei Zhou, Duowen Chen, Taku Komura, Jiajun Wu, and Bo Zhu.**  
   *An Eulerian Vortex Method on Flow Maps.*  
-  ACM Transactions on Graphics (SIGGRAPH Asia 2024).  
-  [paper](https://arxiv.org/pdf/2409.06201) | [video](https://youtu.be/okVnD-rCYrw) | [project page](https://evm.sinanw.com/)
+  ACM Transactions on Graphics (SIGGRAPH Asia 2024).
+  [paper](https://dl.acm.org/doi/pdf/10.1145/3687996) | [video](https://youtu.be/okVnD-rCYrw) | [project page](https://evm.sinanw.com/)
 
 - **Duowen Chen, Zhiqi Li, Junwei Zhou, Fan Feng, Tao Du, and Bo Zhu.**  
   *Solid-Fluid Interaction on Particle Flow Maps.*  
