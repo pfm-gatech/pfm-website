@@ -11,7 +11,7 @@ We regularly publish our research in top-tier conferences and journals:
 - **Yuchen Sun, Linglai Chen, Weiyuan Zeng, Tao Du, Shiying Xiong, and Bo Zhu.**  
   *An Impulse Ghost Fluid Method for Simulating Two-Phase Flows.*  
   ACM Transactions on Graphics (SIGGRAPH Asia 2024).  
-  [paper] | [video](https://youtu.be/MbEyyH2UB3s) | [project page]
+  [paper](https://dl.acm.org/doi/pdf/10.1145/3687963) | [video](https://youtu.be/MbEyyH2UB3s) | [project page](https://yuchen-sun-cg.github.io/projects/igfm/)
 
 - **Zhiqi Li, Duowen Chen, Candong Lin, Jinyuan Liu, and Bo Zhu.**  
   *Particle-Laden Fluid on Flow Maps.*  
