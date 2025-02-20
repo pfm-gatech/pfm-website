@@ -1,7 +1,3 @@
----
-title: Welcome to Flow Map Research
----
-
 # Welcome to the Website for Flow Map Research
 
 Welcome to the official website of **Flow Map Research**! We focus on cutting-edge research in [fluid simulation and computer graphics]. Here, you can find an overview of our projects, publications, and resources.
