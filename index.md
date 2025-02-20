@@ -11,12 +11,12 @@ We regularly publish our research in top-tier conferences and journals:
 - **Yuchen Sun, Linglai Chen, Weiyuan Zeng, Tao Du, Shiying Xiong, and Bo Zhu.**  
   *An Impulse Ghost Fluid Method for Simulating Two-Phase Flows.*  
   ACM Transactions on Graphics (SIGGRAPH Asia 2024).  
-  [paper] | [video] | [project page]
+  [paper] | [video](https://youtu.be/MbEyyH2UB3s) | [project page]
 
 - **Zhiqi Li, Duowen Chen, Candong Lin, Jinyuan Liu, and Bo Zhu.**  
   *Particle-Laden Fluid on Flow Maps.*  
   ACM Transactions on Graphics (SIGGRAPH Asia 2024).  
-  [paper] | [video] | [project page]
+  [paper](https://arxiv.org/pdf/2409.06246) | [video](https://youtu.be/JzozR1t-sIE) | [project page](https://pearseven.github.io/LadenFlowProject/)
 
 - **Sinan Wang, Yitong Deng, Molin Deng, Hong-Xing Yu, Junwei Zhou, Duowen Chen, Taku Komura, Jiajun Wu, and Bo Zhu.**  
   *An Eulerian Vortex Method on Flow Maps.*  
