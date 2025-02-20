@@ -2,7 +2,7 @@
 title: Welcome to Flow Map Research at GaTech!
 ---
 
-Welcome to the official website of **Flow Map Research** at GaTech! We focus on cutting-edge research in fluid simulation and computer graphics. Here, you can find an overview of our projects, publications. A variety of our open-source implementations of flow map methods are available on our [GitHub page](https://github.com/pfm-gatech).
+Welcome to the official website of **Flow Map Research** at GaTech! We focus on cutting-edge research for flow map methods in fluid simulation and computer graphics. Here, you can find an overview of our projects, publications. A variety of our open-source implementations of flow map methods are available on our [GitHub page](https://github.com/pfm-gatech).
 
 ## 📄 Publications
 
