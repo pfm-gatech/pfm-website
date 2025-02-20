@@ -33,6 +33,11 @@ We regularly publish our research in top-tier conferences and journals:
   ACM Transactions on Graphics (SIGGRAPH 2024).  
   [paper] | [video] | [project page]
 
+- **Zhiqi Li, Barnabás Börcsök, Duowen Chen, Yutong Sun, Bo Zhu, Greg Turk.**  
+  *Lagrangian Covector Fluid with Free Surface.*  
+  ACM SIGGRAPH 2024 (Conference Track).  
+  [paper] | [video] | [project page]
+
 - **Yitong Deng, Hong-Xing Yu, Diyang Zhang, Jiajun Wu, and Bo Zhu.**  
   *Fluid Simulation on Neural Flow Maps.*  
   ACM Transactions on Graphics (SIGGRAPH Asia 2023). *(Best Paper Award)*  
