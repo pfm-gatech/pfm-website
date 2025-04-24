@@ -1,12 +1,12 @@
 ---
-title: Welcome to Flow Map Research at GaTech!
+A collection of research resources on the Particle Flow Map method.
 ---
 
-Welcome to the official website of **Flow Map Research** at GaTech! We focus on cutting-edge research for flow map methods in fluid simulation and computer graphics. Here, you can find an overview of our projects, publications. A variety of our open-source implementations of flow map methods are available on our [GitHub page](https://github.com/pfm-gatech).
+This website collects our recent publications, project webpages, and open-source code resources on the Particle Flow Map (PFM) method across computer graphics and computational physics.  
+
+More source code is available in [GitHub page](https://github.com/pfm-gatech).
 
 ## 📄 Publications
-
-We regularly publish our research in top-tier conferences and journals:
 
 - **Yuchen Sun, Linglai Chen, Weiyuan Zeng, Tao Du, Shiying Xiong, and Bo Zhu.**  
   *An Impulse Ghost Fluid Method for Simulating Two-Phase Flows.*  
@@ -43,10 +43,3 @@ We regularly publish our research in top-tier conferences and journals:
   ACM Transactions on Graphics (SIGGRAPH Asia 2023). *(Best Paper Award)*  
   [paper](https://yitongdeng-projects.github.io/neural_flow_maps_webpage/assets/paper/NFM_v1.pdf) | [video](https://youtu.be/zNtPw1zr5tM) | [project page](https://yitongdeng-projects.github.io/neural_flow_maps_webpage/)
 
-
-## 👥 Team
-
-Our group is led by **[Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/)** and consists of talented researchers and students working on innovative topics. Learn more about our team members on the [Team Page](https://faculty.cc.gatech.edu/~bozhu/team.html).
-
-
-If you have any questions or collaboration ideas, feel free to reach out to us via email or GitHub!
