@@ -2,7 +2,7 @@
 A collection of research resources on the Particle Flow Map method.
 ---
 
-This website collects our recent publications, project webpages, and open-source code resources on the Particle Flow Map (PFM) method across computer graphics and computational physics.  
+This website collects our recent publications, project webpages, and code resources on the Particle Flow Map (PFM) method across computer graphics and computational physics.  
 
 More source code is available in [GitHub page](https://github.com/pfm-gatech).
 
