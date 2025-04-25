@@ -317,8 +317,7 @@
       </p>
     
       <p>
-        Similarly, the vorticity field \( \boldsymbol{\omega} \) and its gradient \( \nabla \boldsymbol{\omega} \) are transferred from particles to grid nodes via 
-        <a href="https://dl.acm.org/doi/10.1145/2766996" target="_blank">APIC</a> to compute the grid vorticity \( \boldsymbol{\omega}_{i} \) as:
+        Similarly, the vorticity field \( \boldsymbol{\omega} \) and its gradient \( \nabla \boldsymbol{\omega} \) are transferred from particles to grid nodes to compute the grid vorticity \( \boldsymbol{\omega}_{i} \) as:
       </p>
     
       <div class="formula-container">
@@ -331,7 +330,10 @@
         }
         \]
       </div>
-    
+      <p>
+        This grid-based vorticity field \( \boldsymbol{\omega}_i \) is then used to reconstruct the velocity field on the grid.
+      </p>
+
     </section>
 
 
