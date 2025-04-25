@@ -64,13 +64,16 @@
       <em>material derivative</em> of the velocity field, denoted as
       \( \frac{D \mathbf{u}}{D t} \), which captures the total rate of change experienced by a fluid particle moving with the flow.
     </p>
-    <p>
-      To understand Particle Flow Maps, we first introduce some gauge variables,
-      i.e., the impulse \(\mathbf{m}\), and the vorticity \(\mathbf{\omega}\). 
-      The evolution of \(\mathbf{m}\) follows:
-    </p>
+
     <section>
       <h2>Governing Equations for Impulse</h2>
+
+      <p>
+        To understand Particle Flow Maps, we first introduce some gauge variables,
+        i.e., the impulse \(\mathbf{m}\), and the vorticity \(\mathbf{\omega}\). 
+        The evolution of \(\mathbf{m}\) follows:
+      </p>
+
       <div class="formula-container">
         \[
         \left\{
@@ -82,14 +85,12 @@
         \]
       </div>
     </section>
-    <p>
-      The evolution of \(\mathbf{\omega}\) follows:
-    </p>
+
     <section>
       <h2>Governing Equations for Vorticity</h2>
     
       <p>
-        We now introduce the vorticity field \( \boldsymbol{\omega} = \nabla \times \mathbf{u} \),
+        We now introduce the vorticity variable \( \mathbf{\omega} = \nabla \times \mathbf{u} \),
         which characterizes local rotational motion of the fluid. Its evolution is governed by:
       </p>
     
@@ -97,13 +98,99 @@
         \[
         \left\{
           \begin{aligned}
-            &\frac{D \boldsymbol{\omega}}{D t} = (\boldsymbol{\omega} \cdot \nabla)\mathbf{u} + \nu \Delta \boldsymbol{\omega} \\
-            &\mathbf{u} = -\nabla \times \Delta^{-1} \boldsymbol{\omega}
+            &\frac{D \mathbf{\omega}}{D t} = (\mathbf{\omega} \cdot \nabla)\mathbf{u} + \nu \Delta \mathbf{\omega} \\
+            &\mathbf{u} = -\nabla \times \Delta^{-1} \mathbf{\omega}
           \end{aligned}
         \right.
         \]
       </div>
     </section>
+
+    <section>
+      <h2>Flow Map Preliminaries</h2>
+    
+      <p>
+        We consider a velocity field \( \mathbf{u}(\mathbf{x}, t) \) defined over the fluid domain \( \Omega \), which specifies the fluid velocity at each point \( \mathbf{x} \) and time \( t \). 
+        Let \( \mathbf{X} \in \Omega \) denote the initial position of a fluid particle at time \( t = 0 \).
+      </p>
+    
+      <p>
+        The forward flow map \( \mathbf{\phi}(\cdot, t): \Omega \rightarrow \Omega \) describes the trajectory of the particle as it moves with the flow:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \left\{
+          \begin{aligned}
+            &\frac{\partial \mathbf{\phi}(\mathbf{X}, t)}{\partial t} = \mathbf{u}(\mathbf{\phi}(\mathbf{X}, t), t) \\
+            &\mathbf{\phi}(\mathbf{X}, 0) = \mathbf{X} \\
+            &\mathbf{\phi}(\mathbf{X}, t) = \mathbf{x}
+          \end{aligned}
+        \right.
+        \]
+      </div>
+    
+      <p>
+        This map tracks the position \( \mathbf{x} \) of a fluid particle that starts from \( \mathbf{X} \) at \( t = 0 \) and arrives at time \( t \).
+        The corresponding inverse flow map \( \mathbf{\psi}(\cdot, t): \Omega \rightarrow \Omega \) retrieves the original position from the current one:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \left\{
+          \begin{aligned}
+            &\mathbf{\psi}(\mathbf{x}, 0) = \mathbf{x} \\
+            &\mathbf{\psi}(\mathbf{x}, t) = \mathbf{X}
+          \end{aligned}
+        \right.
+        \]
+      </div>
+    
+      <p>
+        To capture how the flow map and its inverse deform infinitesimal regions in the fluid, we define their Jacobian matrices:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \left\{
+          \begin{aligned}
+            &\mathcal{F}(\mathbf{X}, t) = \frac{\partial \mathbf{\phi}(\mathbf{X}, t)}{\partial \mathbf{X}} \\
+            &\mathcal{T}(\mathbf{x}, t) = \frac{\partial \mathbf{\psi}(\mathbf{x}, t)}{\partial \mathbf{x}}
+          \end{aligned}
+        \right.
+        \]
+      </div>
+    
+      <p>
+        Under the Lagrangian framework, the evolution of these Jacobian matrices follows:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \left\{
+          \begin{aligned}
+            &\frac{D \mathcal{F}}{D t} = \nabla \mathbf{u} \cdot \mathcal{F} \\
+            &\frac{D \mathcal{T}}{D t} = -\mathcal{T} \cdot \nabla \mathbf{u}
+          \end{aligned}
+        \right.
+        \]
+      </div>
+    
+      <p>
+        For further details, we refer readers to the works of <a href="https://www.osti.gov/servlets/purl/87798" target="_blank"></a>Cortez (1995).
+      </p>
+    </section>
+
+    <section>
+      <h2>Physical Model of Particle Flow Maps</h2>
+    
+      <p>
+        We now introduce the physical model of Particle Flow Maps.
+      </p>
+    
+
+    </section>
+
 
   </main>
   <footer>
