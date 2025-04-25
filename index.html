@@ -59,7 +59,7 @@
     /* Hide caption when expanded so image is not blocked */
     .result-item.expanded .result-caption { display: none; }
     .result-item.expanded { overflow: visible; z-index: 10; }
-    .result-item.expanded img { position: absolute; top: 0; left: 50%; transform: translateX(-50%) translateY(-50%) scale(1); width: auto; height: auto; max-width: none; max-height: none; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+    .result-item.expanded img { position: absolute; top: 0; left: 50%; transform: translateX(-50%) translateY(-50%) scale(0.8); width: auto; height: auto; max-width: none; max-height: none; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
     .result-caption { position: absolute; bottom: 0; width: 100%; background: var(--bg-light); padding: 0.5rem; font-size: 0.9rem; }
 
     #team .member { display: flex; align-items: center; }
@@ -217,7 +217,31 @@
         </div>
         <div class="result-item">
           <img src="result/real_time.png" alt="Result 3">
-          <div class="result-caption">Time breakdown of real time flow map</div>
+          <div class="result-caption">Time breakdown of real-time flow map method enables fast fluid simulation</div>
+        </div>
+        <div class="result-item">
+          <img src="result/levelset.png" alt="Result 3">
+          <div class="result-caption">Levelset method with flow map advection shows great potential in volume preservation</div>
+        </div>
+        <div class="result-item">
+          <img src="result/vort_lid.png" alt="Result 3">
+          <div class="result-caption">Vortex flow map methods shows great numerical accuracy in lid driven flow test</div>
+        </div>
+        <div class="result-item">
+          <img src="result/karman.png" alt="Result 3">
+          <div class="result-caption">Lift and drag coefficient computed through PFM aligns with referenced literatures</div>
+        </div>
+        <div class="result-item">
+          <img src="result/adaptive.png" alt="Result 3">
+          <div class="result-caption">Adaptive flow map methods simulates effective voxel throughput far excceeding other methods</div>
+        </div>
+        <div class="result-item">
+          <img src="result/cavity.png" alt="Result 3">
+          <div class="result-caption">PFM computes cavity flow with large variety of Re numbers shows great alignemnet with referenced solution</div>
+        </div>
+        <div class="result-item">
+          <img src="result/vpfm.png" alt="Result 3">
+          <div class="result-caption">Vortex PFM method shows great alignment under high Re number flow with referenced solution</div>
         </div>
       </div>
     </section>
