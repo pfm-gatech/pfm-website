@@ -177,7 +177,7 @@
       </div>
     
       <p>
-        For further details, we refer readers to the works of <a href="https://www.osti.gov/servlets/purl/87798" target="_blank"></a>Cortez (1995).
+        For further details, we refer readers to the works of <a href="https://www.osti.gov/servlets/purl/87798" target="_blank"> Cortez (1995)</a>.
       </p>
     </section>
 
@@ -185,12 +185,109 @@
       <h2>Physical Model of Particle Flow Maps</h2>
     
       <p>
-        We now introduce the physical model of Particle Flow Maps.
+        The Particle Flow Map (PFM) method 
+        leverages the observation that the trajectory of a particle naturally defines a perfect flow map.
+        This insight enables the construction of accurate, bidirectional flow maps using particles as carriers.
       </p>
     
+      <p>
+        Given a particle trajectory spanning from time \( a \) to \( c \), any intermediate time \( t \in [a, c] \) can be treated as the origin of a flow map.
+        The destination is fixed at time \( c \), regardless of which intermediate \( t \) is chosen.
+      </p>
+    
+      <p>
+        During advection, particles carry various physical quantities—including 
+        \( \mathbf{\omega} \), \( \mathbf{m} \), \( \nabla \mathbf{\omega} \), and \( \nabla \mathbf{m} \)—as well as flow map information like 
+        \( \mathcal{F} \), \( \mathcal{T} \), \( \nabla \mathcal{F} \), and \( \nabla \mathcal{T} \).
+        These quantities evolve along the particle trajectory, enabling the mapping of fluid variables from time \( t \) to \( c \).
+      </p>
+    
+      <p>
+        Unlike earlier approaches that estimate stretching effects using finite difference approximations,
+        the PFM method directly computes stretching terms using the Jacobians of the flow maps,
+        offering more accurate and stable modeling of fluid transport from the initial state.
+      </p>
 
     </section>
 
+    <section>
+      <h2>Impulse Transport via Particle Flow Maps</h2>
+    
+      <p>
+        As shown in the works of 
+        <a href="https://www.osti.gov/servlets/purl/87798" target="_blank">Cortez (1995)</a>,
+        the evolution of the impulse variable \( \mathbf{m} \) can be expressed using the inverse flow map Jacobian \( \mathcal{T}_t \):
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \mathbf{m}(\mathbf{x}, t) = \mathcal{T}_t^\top(\mathbf{x}) \, \mathbf{m}(\boldsymbol{\psi}(\mathbf{x}), 0)
+        \]
+      </div>
+    
+      <p>
+        This equation maps the initial impulse at the material point \( \boldsymbol{\psi}(\mathbf{x}) \) to the current location \( \mathbf{x} \), using the transpose of the backward flow map Jacobian.
+        The Jacobian \( \mathcal{T}_t(\mathbf{x}) \) is defined as \( \frac{\partial \boldsymbol{\psi}(\mathbf{x}, t)}{\partial \mathbf{x}} \).
+      </p>
+    
+      <p>
+        Similarly, the spatial variation of the impulse variable, \( \nabla \mathbf{m} \), evolves as:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \nabla \mathbf{m}(\mathbf{x}, t) =
+        \mathcal{T}_t^\top \, \nabla_{\boldsymbol{\psi}} \mathbf{m}(\boldsymbol{\psi}(\mathbf{x}), 0) \, \mathcal{T}_t +
+        \nabla \mathcal{T}_t^\top \, \mathbf{m}(\boldsymbol{\psi}(\mathbf{x}), 0)
+        \]
+      </div>
+    
+      <p>
+        Here, \( \nabla_{\boldsymbol{\psi}} \) denotes the gradient with respect to the initial coordinate \( \boldsymbol{\psi} \), and \( \nabla \mathcal{T}_t \) refers to the spatial derivative of the flow map Jacobian.
+        For a full derivation of these expressions, please refer to <em>Appendix: Material Derivative of Momentum</em>.
+      </p>
+    </section>
+
+    
+
+    <section>
+      <h2>Vorticity Transport via Particle Flow Maps</h2>
+    
+      <p>
+        The evolution of vorticity on particle flow maps can be described analytically based on the formulation by 
+        <a href="https://www.osti.gov/servlets/purl/87798" target="_blank">Cortez (1995)</a>.
+        The flow map Jacobian \( \mathcal{F}_t \) propagates the initial vorticity field \( \mathbf{\omega}_0 \) to any later time \( t \) as follows:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \mathbf{\omega}(\mathbf{x}, t) = \mathcal{F}_t(\mathbf{x}) \, \mathbf{\omega}(\mathbf{\psi}(\mathbf{x}), 0)
+        \]
+      </div>
+    
+      <p>
+        This expression indicates that the vorticity at a current spatial position \( \mathbf{x} \) and time \( t \) is determined by transforming the initial vorticity at the corresponding material point \( \mathbf{\psi}(\mathbf{x}) \) through the flow map Jacobian \( \mathcal{F}_t \).
+      </p>
+    
+      <p>
+        For particle-to-grid (P2G) transfers (see Section on Vorticity Transfer), it is also necessary to evaluate the gradient of vorticity, \( \nabla \mathbf{\omega} \).
+        Taking spatial gradients of the above expression, we obtain the following evolution equation for \( \nabla \mathbf{\omega} \) under the flow map framework:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \nabla \mathbf{\omega}(\mathbf{x}, t) =
+        \mathcal{F}_t \, \nabla_{\mathbf{\psi}} \mathbf{\omega}(\mathbf{\psi}(\mathbf{x}), 0) \, \mathcal{T}_t +
+        \nabla \mathcal{F}_t \, \mathbf{\omega}(\mathbf{\psi}(\mathbf{x}), 0)
+        \]
+      </div>
+    
+      <p>
+        This relation captures how both the Jacobian and its gradient contribute to the transport of spatial vorticity variation during particle advection.
+      </p>
+    </section>
+
+    
 
   </main>
   <footer>
