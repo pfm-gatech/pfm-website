@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathematical Formulas – [Lab Name]</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    /* Scientific Professional Palette from main site */
+    :root {
+      --primary-dark: #0D1B2A;
+      --primary-light: #1B263B;
+      --accent: #E07A5F;
+      --text-dark: #0D1B2A;
+      --bg-light: #F8F9FA;
+      --bg-white: #FFFFFF;
+      --border-light: #D3D3D3;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Montserrat',sans-serif; background:var(--bg-light); color:var(--text-dark); line-height:1.6; }
+    nav { background:var(--primary-dark); box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    nav ul { display:flex; justify-content:center; list-style:none; padding:0.75rem; }
+    nav ul li { margin:0 1rem; }
+    nav ul li a { color:var(--bg-white); text-decoration:none; font-weight:600; letter-spacing:0.03rem; }
+    nav ul li a:hover { color:var(--accent); }
+
+    main { max-width:960px; margin:2rem auto; padding:0 1rem; }
+    h1 { font-size:2rem; color:var(--primary-dark); margin-bottom:1rem; }
+    h2 { font-size:1.5rem; color:var(--primary-dark); border-left:4px solid var(--accent); padding-left:0.5rem; margin-bottom:1rem; }
+    .formula-container { background:var(--bg-white); padding:1rem; border-radius:4px; box-shadow:0 1px 3px rgba(0,0,0,0.1); margin-bottom:1.5rem; overflow-x:auto; }
+    footer { text-align:center; padding:1rem; background:var(--primary-light); color:var(--bg-white); font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Mathematical Formulas</h1>
+    <section>
+      <h2>Governing Equations</h2>
+      <div class="formula-container">
+        \[
+        \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u}
+        \]
+      </div>
+      <div class="formula-container">
+        \[
+        \nabla \cdot \mathbf{u} = 0
+        \]
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Flow Map Research. All rights reserved.</p>
+  </footer>
+</body>
+</html>
