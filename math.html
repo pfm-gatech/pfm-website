@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathematical Formulas – [Lab Name]</title>
+  <title>Mathematics Behind Particle Flow Maps – [Lab Name]</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- MathJax -->
@@ -42,31 +42,38 @@
     </ul>
   </nav>
   <main>
-    <h1>Mathematical Formulas</h1>
+    <h1>Mathematics Behind Particle Flow Maps</h1>
     <section>
-      <h2>Governing Equations</h2>
+      <h2>Navier-Stokes Equation (Governing Equations for Velocity)</h2>
+      <p>
+        We begin with the incompressible Navier-Stokes equations, which govern the fluid motion.
+      </p>
       <div class="formula-container">
         \[
         \left\{
           \begin{aligned}
-            &\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u} \\
+            &\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \Delta \mathbf{u} \\
             &\nabla \cdot \mathbf{u} = 0
           \end{aligned}
         \right.
         \]
       </div>
     </section>
-
+    <p>
+      To understand Particle Flow Maps, we first introduce some gauga variables,
+      i.e., the impulse $\mathbf{m}$, and the vorticity $\mathbf{\omega}$. 
+      The evolution of $\mathbf{m}$ follows:
+    </p>
     <section>
-      <h2>Governing Equations for impulse</h2>
+      <h2>Governing Equations for Impulse</h2>
       <div class="formula-container">
         \[
-        \frac{D m}{D t} = -(\nabla \mathbf{u})^T \mathbf{m} + \nu \nabla^2 \mathbf{m}
-        \]
-      </div>
-      <div class="formula-container">
-        \[
-        \mathbf{u} = \mathbf{m} - \nabla (\Delta^{-1} \left(\nabla \cdot \mathbf{m}\right)).
+        \left\{
+          \begin{aligned}
+            &\frac{D \mathbf{m}}{D t} = -(\nabla \mathbf{u})^T \mathbf{m} + \nu \nabla^2 \mathbf{m} \\
+            &\mathbf{u} = \mathbf{m} - \nabla \left( \Delta^{-1} \left( \nabla \cdot \mathbf{m} \right) \right)
+          \end{aligned}
+        \right.
         \]
       </div>
     </section>
