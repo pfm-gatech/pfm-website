@@ -60,9 +60,14 @@
       </div>
     </section>
     <p>
+      The left-hand side of the momentum equation can also be written as the
+      <em>material derivative</em> of the velocity field, denoted as
+      \( \frac{D \mathbf{u}}{D t} \), which captures the total rate of change experienced by a fluid particle moving with the flow:
+    </p>
+    <p>
       To understand Particle Flow Maps, we first introduce some gauga variables,
-      i.e., the impulse $\mathbf{m}$, and the vorticity $\mathbf{\omega}$. 
-      The evolution of $\mathbf{m}$ follows:
+      i.e., the impulse \(\mathbf{m}\), and the vorticity \(\mathbf{\omega}\). 
+      The evolution of \(\mathbf{m}\) follows:
     </p>
     <section>
       <h2>Governing Equations for Impulse</h2>
@@ -70,13 +75,16 @@
         \[
         \left\{
           \begin{aligned}
-            &\frac{D \mathbf{m}}{D t} = -(\nabla \mathbf{u})^T \mathbf{m} + \nu \nabla^2 \mathbf{m} \\
+            &\frac{D \mathbf{m}}{D t} = -(\nabla \mathbf{u})^T \mathbf{m} + \nu \Delta \mathbf{m} \\
             &\mathbf{u} = \mathbf{m} - \nabla \left( \Delta^{-1} \left( \nabla \cdot \mathbf{m} \right) \right)
           \end{aligned}
         \right.
         \]
       </div>
     </section>
+    <p>
+      The evolution of \(\mathbf{\omega}\) follows:
+    </p>
 
 
   </main>
