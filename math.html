@@ -70,7 +70,7 @@
 
       <p>
         To understand Particle Flow Maps, we first introduce some gauge variables,
-        i.e., the impulse \(\mathbf{m}\), and the vorticity \(\mathbf{\omega}\). 
+        i.e., the impulse \(\mathbf{m}\), and the vorticity \(\boldsymbol{\omega}\). 
         The evolution of \(\mathbf{m}\) follows:
       </p>
 
@@ -90,7 +90,7 @@
       <h2>Governing Equations for Vorticity</h2>
     
       <p>
-        We now introduce the vorticity variable \( \mathbf{\omega} = \nabla \times \mathbf{u} \),
+        We now introduce the vorticity variable \( \boldsymbol{\omega} = \nabla \times \mathbf{u} \),
         which characterizes local rotational motion of the fluid. Its evolution is governed by:
       </p>
     
@@ -98,8 +98,8 @@
         \[
         \left\{
           \begin{aligned}
-            &\frac{D \mathbf{\omega}}{D t} = (\mathbf{\omega} \cdot \nabla)\mathbf{u} + \nu \Delta \mathbf{\omega} \\
-            &\mathbf{u} = -\nabla \times \Delta^{-1} \mathbf{\omega}
+            &\frac{D \boldsymbol{\omega}}{D t} = (\boldsymbol{\omega} \cdot \nabla)\mathbf{u} + \nu \Delta \boldsymbol{\omega} \\
+            &\mathbf{u} = -\nabla \times \Delta^{-1} \boldsymbol{\omega}
           \end{aligned}
         \right.
         \]
@@ -115,16 +115,16 @@
       </p>
     
       <p>
-        The forward flow map \( \mathbf{\phi}(\cdot, t): \Omega \rightarrow \Omega \) describes the trajectory of the particle as it moves with the flow:
+        The forward flow map \( \boldsymbol{\phi}(\cdot, t): \Omega \rightarrow \Omega \) describes the trajectory of the particle as it moves with the flow:
       </p>
     
       <div class="formula-container">
         \[
         \left\{
           \begin{aligned}
-            &\frac{\partial \mathbf{\phi}(\mathbf{X}, t)}{\partial t} = \mathbf{u}(\mathbf{\phi}(\mathbf{X}, t), t) \\
-            &\mathbf{\phi}(\mathbf{X}, 0) = \mathbf{X} \\
-            &\mathbf{\phi}(\mathbf{X}, t) = \mathbf{x}
+            &\frac{\partial \boldsymbol{\phi}(\mathbf{X}, t)}{\partial t} = \mathbf{u}(\boldsymbol{\phi}(\mathbf{X}, t), t) \\
+            &\boldsymbol{\phi}(\mathbf{X}, 0) = \mathbf{X} \\
+            &\boldsymbol{\phi}(\mathbf{X}, t) = \mathbf{x}
           \end{aligned}
         \right.
         \]
@@ -132,15 +132,15 @@
     
       <p>
         This map tracks the position \( \mathbf{x} \) of a fluid particle that starts from \( \mathbf{X} \) at \( t = 0 \) and arrives at time \( t \).
-        The corresponding inverse flow map \( \mathbf{\psi}(\cdot, t): \Omega \rightarrow \Omega \) retrieves the original position from the current one:
+        The corresponding inverse flow map \( \boldsymbol{\psi}(\cdot, t): \Omega \rightarrow \Omega \) retrieves the original position from the current one:
       </p>
     
       <div class="formula-container">
         \[
         \left\{
           \begin{aligned}
-            &\mathbf{\psi}(\mathbf{x}, 0) = \mathbf{x} \\
-            &\mathbf{\psi}(\mathbf{x}, t) = \mathbf{X}
+            &\boldsymbol{\psi}(\mathbf{x}, 0) = \mathbf{x} \\
+            &\boldsymbol{\psi}(\mathbf{x}, t) = \mathbf{X}
           \end{aligned}
         \right.
         \]
@@ -154,8 +154,8 @@
         \[
         \left\{
           \begin{aligned}
-            &\mathcal{F}(\mathbf{X}, t) = \frac{\partial \mathbf{\phi}(\mathbf{X}, t)}{\partial \mathbf{X}} \\
-            &\mathcal{T}(\mathbf{x}, t) = \frac{\partial \mathbf{\psi}(\mathbf{x}, t)}{\partial \mathbf{x}}
+            &\mathcal{F}(\mathbf{X}, t) = \frac{\partial \boldsymbol{\phi}(\mathbf{X}, t)}{\partial \mathbf{X}} \\
+            &\mathcal{T}(\mathbf{x}, t) = \frac{\partial \boldsymbol{\psi}(\mathbf{x}, t)}{\partial \mathbf{x}}
           \end{aligned}
         \right.
         \]
@@ -197,7 +197,7 @@
     
       <p>
         During advection, particles carry various physical quantities—including 
-        \( \mathbf{\omega} \), \( \mathbf{m} \), \( \nabla \mathbf{\omega} \), and \( \nabla \mathbf{m} \)—as well as flow map information like 
+        \( \boldsymbol{\omega} \), \( \mathbf{m} \), \( \nabla \boldsymbol{\omega} \), and \( \nabla \mathbf{m} \)—as well as flow map information like 
         \( \mathcal{F} \), \( \mathcal{T} \), \( \nabla \mathcal{F} \), and \( \nabla \mathcal{T} \).
         These quantities evolve along the particle trajectory, enabling the mapping of fluid variables from time \( t \) to \( c \).
       </p>
@@ -231,7 +231,7 @@
       </p>
     
       <p>
-        Similarly, the spatial variation of the impulse variable, \( \nabla \mathbf{m} \), evolves as:
+        Similarly, the gradient of the impulse variable, \( \nabla \mathbf{m} \), evolves as:
       </p>
     
       <div class="formula-container">
@@ -243,8 +243,7 @@
       </div>
     
       <p>
-        Here, \( \nabla_{\boldsymbol{\psi}} \) denotes the gradient with respect to the initial coordinate \( \boldsymbol{\psi} \), and \( \nabla \mathcal{T}_t \) refers to the spatial derivative of the flow map Jacobian.
-        For a full derivation of these expressions, please refer to <em>Appendix: Material Derivative of Momentum</em>.
+        Here, \( \nabla_{\boldsymbol{\psi}} \) denotes the gradient with respect to the initial coordinate \( \boldsymbol{\psi} \), and \( \nabla \mathcal{T}_t \) refers to the flow map Hessian.
       </p>
     </section>
 
@@ -256,29 +255,29 @@
       <p>
         The evolution of vorticity on particle flow maps can be described analytically based on the formulation by 
         <a href="https://www.osti.gov/servlets/purl/87798" target="_blank">Cortez (1995)</a>.
-        The flow map Jacobian \( \mathcal{F}_t \) propagates the initial vorticity field \( \mathbf{\omega}_0 \) to any later time \( t \) as follows:
+        The flow map Jacobian \( \mathcal{F}_t \) propagates the initial vorticity field \( \boldsymbol{\omega}_0 \) to any later time \( t \) as follows:
       </p>
     
       <div class="formula-container">
         \[
-        \mathbf{\omega}(\mathbf{x}, t) = \mathcal{F}_t(\mathbf{x}) \, \mathbf{\omega}(\mathbf{\psi}(\mathbf{x}), 0)
+        \boldsymbol{\omega}(\mathbf{x}, t) = \mathcal{F}_t(\mathbf{x}) \, \boldsymbol{\omega}(\boldsymbol{\psi}(\mathbf{x}), 0)
         \]
       </div>
     
       <p>
-        This expression indicates that the vorticity at a current spatial position \( \mathbf{x} \) and time \( t \) is determined by transforming the initial vorticity at the corresponding material point \( \mathbf{\psi}(\mathbf{x}) \) through the flow map Jacobian \( \mathcal{F}_t \).
+        This expression indicates that the vorticity at a current spatial position \( \mathbf{x} \) and time \( t \) is determined by transforming the initial vorticity at the corresponding material point \( \boldsymbol{\psi}(\mathbf{x}) \) through the flow map Jacobian \( \mathcal{F}_t \).
       </p>
     
       <p>
-        For particle-to-grid (P2G) transfers (see Section on Vorticity Transfer), it is also necessary to evaluate the gradient of vorticity, \( \nabla \mathbf{\omega} \).
-        Taking spatial gradients of the above expression, we obtain the following evolution equation for \( \nabla \mathbf{\omega} \) under the flow map framework:
+        For particle-to-grid (P2G) transfers, it is also necessary to evaluate the gradient of vorticity, \( \nabla \boldsymbol{\omega} \).
+        Taking spatial gradients of the above expression, we obtain the following evolution equation for \( \nabla \boldsymbol{\omega} \) under the flow map framework:
       </p>
     
       <div class="formula-container">
         \[
-        \nabla \mathbf{\omega}(\mathbf{x}, t) =
-        \mathcal{F}_t \, \nabla_{\mathbf{\psi}} \mathbf{\omega}(\mathbf{\psi}(\mathbf{x}), 0) \, \mathcal{T}_t +
-        \nabla \mathcal{F}_t \, \mathbf{\omega}(\mathbf{\psi}(\mathbf{x}), 0)
+        \nabla \boldsymbol{\omega}(\mathbf{x}, t) =
+        \mathcal{F}_t \, \nabla_{\boldsymbol{\psi}} \boldsymbol{\omega}(\boldsymbol{\psi}(\mathbf{x}), 0) \, \mathcal{T}_t +
+        \nabla \mathcal{F}_t \, \boldsymbol{\omega}(\boldsymbol{\psi}(\mathbf{x}), 0)
         \]
       </div>
     
@@ -288,6 +287,57 @@
     </section>
 
     
+    <section>
+      <h2>Flow-Map-Based Advection and P2G Transfer</h2>
+    
+      <p>
+        After advecting the impulse \( \mathbf{m} \) and vorticity \( \boldsymbol{\omega} \) fields from their initial states using flow maps, 
+        we interpolate these quantities from particles back to the Eulerian grid in order to compute the grid-based velocity field.
+      </p>
+    
+      <p>
+        For impulse, once the convected impulse \( \mathbf{m}_c \) and its gradient \( \nabla \mathbf{m}_c \) are updated on particles,
+        we perform a particle-to-grid (P2G) transfer to obtain the grid impulse field \( \mathbf{m}_i \). The transfer is performed using gradient-enhanced interpolation:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \mathbf{m}_i \gets
+        \frac{
+          \displaystyle \sum_p w_{ip} \left( \mathbf{m}_c^p + \nabla \mathbf{m}_c^p \cdot (\mathbf{x}_i - \mathbf{x}_p) \right)
+        }{
+          \displaystyle \sum_p w_{ip}
+        }
+        \]
+      </div>
+    
+      <p>
+        This grid-based impulse field \( \mathbf{m}_i \) is then used to solve a Poisson equation to remove its divergence component,
+        ultimately yielding the incompressible velocity field \( \mathbf{u}_i \) on the grid.
+      </p>
+    
+      <p>
+        Similarly, the vorticity field \( \boldsymbol{\omega} \) and its gradient \( \nabla \boldsymbol{\omega} \) are transferred from particles to grid nodes.
+        We adopt the interpolation scheme introduced in 
+        <a href="https://doi.org/10.1145/2816795.2818074" target="_blank">Jiang et al. (2015)</a> to compute the grid vorticity \( \boldsymbol{\omega}^{g, i} \) as:
+      </p>
+    
+      <div class="formula-container">
+        \[
+        \boldsymbol{\omega}^{g, i} =
+        \frac{
+          \displaystyle \sum_p s^{ip} \left( \boldsymbol{\omega}^p + \nabla \boldsymbol{\omega}^p \cdot (\mathbf{x}^{g,i} - \mathbf{x}^p) \right)
+        }{
+          \displaystyle \sum_p s^{ip}
+        }
+        \]
+      </div>
+    
+      <p>
+        This reconstruction improves accuracy by capturing local spatial variation in rotational quantities, which is especially important for vortex-dominated flows.
+      </p>
+    </section>
+
 
   </main>
   <footer>
