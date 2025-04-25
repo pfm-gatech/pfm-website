@@ -132,7 +132,7 @@
     
       <p>
         This map tracks the position \( \mathbf{x} \) of a fluid particle that starts from \( \mathbf{X} \) at \( t = 0 \) and arrives at time \( t \).
-        The corresponding inverse flow map \( \boldsymbol{\psi}(\cdot, t): \Omega \rightarrow \Omega \) retrieves the original position from the current one:
+        The corresponding backward flow map \( \boldsymbol{\psi}(\cdot, t): \Omega \rightarrow \Omega \) retrieves the original position from the current one:
       </p>
     
       <div class="formula-container">
@@ -216,7 +216,7 @@
       <p>
         As shown in the works of 
         <a href="https://www.osti.gov/servlets/purl/87798" target="_blank">Cortez (1995)</a>,
-        the evolution of the impulse variable \( \mathbf{m} \) can be expressed using the inverse flow map Jacobian \( \mathcal{T}_t \):
+        the evolution of the impulse variable \( \mathbf{m} \) can be expressed using the backward flow map Jacobian \( \mathcal{T}_t \):
       </p>
     
       <div class="formula-container">
@@ -231,7 +231,7 @@
       </p>
     
       <p>
-        Similarly, the gradient of the impulse variable, \( \nabla \mathbf{m} \), evolves as:
+        For particle-to-grid (P2G) transfers later, it is also necessary to evaluate the gradient of the impulse variable, \( \nabla \mathbf{m} \), evolves as:
       </p>
     
       <div class="formula-container">
@@ -243,7 +243,7 @@
       </div>
     
       <p>
-        Here, \( \nabla_{\boldsymbol{\psi}} \) denotes the gradient with respect to the initial coordinate \( \boldsymbol{\psi} \), and \( \nabla \mathcal{T}_t \) refers to the flow map Hessian.
+        Here, \( \nabla_{\boldsymbol{\psi}} \) denotes the gradient with respect to the initial coordinates, and \( \nabla \mathcal{T}_t \) refers to the backward flow map Hessian.
       </p>
     </section>
 
@@ -253,7 +253,7 @@
       <h2>Vorticity Transport via Particle Flow Maps</h2>
     
       <p>
-        The evolution of vorticity on particle flow maps can be described analytically based on the formulation by 
+        Similarly, the evolution of vorticity on particle flow maps can be described analytically based on the formulation by 
         <a href="https://www.osti.gov/servlets/purl/87798" target="_blank">Cortez (1995)</a>.
         The flow map Jacobian \( \mathcal{F}_t \) propagates the initial vorticity field \( \boldsymbol{\omega}_0 \) to any later time \( t \) as follows:
       </p>
@@ -265,11 +265,11 @@
       </div>
     
       <p>
-        This expression indicates that the vorticity at a current spatial position \( \mathbf{x} \) and time \( t \) is determined by transforming the initial vorticity at the corresponding material point \( \boldsymbol{\psi}(\mathbf{x}) \) through the flow map Jacobian \( \mathcal{F}_t \).
+        This expression indicates that the vorticity at a current spatial position \( \mathbf{x} \) and time \( t \) is determined by transforming the initial vorticity at the corresponding material point \( \boldsymbol{\psi}(\mathbf{x}) \) through the forward flow map Jacobian \( \mathcal{F}_t \).
       </p>
     
       <p>
-        For particle-to-grid (P2G) transfers, it is also necessary to evaluate the gradient of vorticity, \( \nabla \boldsymbol{\omega} \).
+        For particle-to-grid (P2G) transfers later, it is also necessary to evaluate the gradient of vorticity, \( \nabla \boldsymbol{\omega} \).
         Taking spatial gradients of the above expression, we obtain the following evolution equation for \( \nabla \boldsymbol{\omega} \) under the flow map framework:
       </p>
     
@@ -291,13 +291,13 @@
       <h2>Flow-Map-Based Advection and P2G Transfer</h2>
     
       <p>
-        After advecting the impulse \( \mathbf{m} \) and vorticity \( \boldsymbol{\omega} \) fields from their initial states using flow maps, 
+        After advecting the impulse \( \mathbf{m} \) and vorticity \( \boldsymbol{\omega} \) fields from their initial states using particle flow maps, 
         we interpolate these quantities from particles back to the Eulerian grid in order to compute the grid-based velocity field.
       </p>
     
       <p>
         For impulse, once the convected impulse \( \mathbf{m}_c \) and its gradient \( \nabla \mathbf{m}_c \) are updated on particles,
-        we perform a particle-to-grid (P2G) transfer to obtain the grid impulse field \( \mathbf{m}_i \). The transfer is performed using gradient-enhanced interpolation:
+        we perform a particle-to-grid (P2G) transfer to obtain the grid impulse field \( \mathbf{m}_i \). The transfer is performed via <a href="https://dl.acm.org/doi/10.1145/2766996" target="_blank">APIC</a>:
       </p>
     
       <div class="formula-container">
@@ -317,9 +317,8 @@
       </p>
     
       <p>
-        Similarly, the vorticity field \( \boldsymbol{\omega} \) and its gradient \( \nabla \boldsymbol{\omega} \) are transferred from particles to grid nodes.
-        We adopt the interpolation scheme introduced in 
-        <a href="https://doi.org/10.1145/2816795.2818074" target="_blank">Jiang et al. (2015)</a> to compute the grid vorticity \( \boldsymbol{\omega}^{g, i} \) as:
+        Similarly, the vorticity field \( \boldsymbol{\omega} \) and its gradient \( \nabla \boldsymbol{\omega} \) are transferred from particles to grid nodes via 
+        <a href="https://dl.acm.org/doi/10.1145/2766996" target="_blank">APIC</a> to compute the grid vorticity \( \boldsymbol{\omega}^{g, i} \) as:
       </p>
     
       <div class="formula-container">
@@ -333,9 +332,6 @@
         \]
       </div>
     
-      <p>
-        This reconstruction improves accuracy by capturing local spatial variation in rotational quantities, which is especially important for vortex-dominated flows.
-      </p>
     </section>
 
 
