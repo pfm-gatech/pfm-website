@@ -266,6 +266,7 @@
     <h2>Jump to Post</h2>
     <ul>
       <li><a href="#post-compressible">Fluid Simulation on Compressible Flow Maps</a></li>
+      <li><a href="#post-vpfm">Fluid Simulation on Vortex Particle Flow Maps</a></li>
     </ul>
   </aside>
 
@@ -305,6 +306,41 @@
               <p class="post-excerpt">
               <b>Full Abstract</b>
               This paper presents a unified compressible flow map framework designed to accommodate diverse compressible flow systems, including high-Mach-number flows (e.g., shock waves and supersonic aircraft), weakly compressible systems (e.g., smoke plumes and ink diffusion), and incompressible systems evolving through compressible acoustic quantities (e.g., free-surface shallow water). At the core of our approach is a theoretical foundation for compressible flow maps based on Lagrangian path integrals, a novel advection scheme for the conservative transport of density and energy, and a unified numerical framework for solving compressible flows with varying pressure treatments. We validate our method across three representative compressible flow systems, characterized by varying fluid morphologies, governing equations, and compressibility levels, demonstrating its ability to preserve and evolve spatiotemporal features such as vortical structures and wave interactions governed by different flow physics. Our results highlight a wide range of novel phenomena, from ink torus breakup to delta wing tail vortices and vortex shedding on free surfaces, significantly expanding the range of fluid systems that flow-map methods can handle.</br>
+              </p>
+            </div>
+          </div>
+          <!-- Post Item 2 -->
+          <div id="post-vpfm" class="post-item">
+            <div class="post-content">
+              
+              <h3>Fluid Simulation on Vortex Particle Flow Maps</h3>
+              <!-- <p class="post-meta">June 5, 2025 &mdash; by Duowen Chen</p> -->
+              <p class="post-meta">June 5, 2025 |</p>
+              <img src="./pub_img/vpfm.png" alt="SIGGRAPH 2025 VPFM">
+              <p class="post-excerpt">
+                We are thrilled to announce that our paper "Fluid Simulation on Vortex Particle Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
+                Our work revisits the classical Vortex-In-Cell (VIC) method through a modern flow map perspective, extending traditional vortex particles into <b>vortex particle flow maps</b> that support long-term, stable, and accurate vortex evolution.</br>
+                By integrating higher-order information like vorticity gradients and flow map Hessians, we enable vortex-preserving simulations beyond the reach of existing methods. This approach successfully bridges the numerical-physical gap in vorticity transport, achieving <b>stable flow maps 3–12× longer </b> in various benchmarks, effectively re-establishing VIC as a competitive tool in graphics.  </br>
+
+                Key highlights: </br>
+                ✅ A unified vortex particle flow map (VPFM) framework for transporting vorticity in long-term simulations.</br>
+                ✅ Introduction of flow map Hessians and higher-order vortex quantities for improved spatiotemporal coherence.</br>
+                ✅ Boundary-aware VPFM that supports no-through and approximated no-slip conditions.</br>
+                ✅ 3–12× longer stable simulations in 2D, and up to 30× longer vortex preservation in 3D than previous methods.</br>
+                ✅ Revives the VIC method as a viable alternative to traditional velocity-based solvers in graphics.
+
+                Checkout our full paper and simulation video for more details!</br>
+              </p>
+              <p>
+                📄 <a href="https://arxiv.org/pdf/2505.21946">Paper Preprint</a></br>
+                🎞️ <a href="https://www.youtube.com/watch?v=8DukQvmr2EI">Simulation and validation videos</a></br>
+                💻 <a href="">Source Code [Coming Soon]</a></br>
+                <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
+              </p>
+            </br>
+              <p class="post-excerpt">
+              <b>Full Abstract</b>
+              We propose the Vortex Particle Flow Map (VPFM) method to simulate incompressible flow with complex vortical evolution in the presence of dynamic solid boundaries. The core insight of our approach is that vorticity is an ideal quantity for evolution on particle flow maps, enabling significantly longer flow map distances compared to other fluid quantities like velocity or impulse. To achieve this goal, we developed a hybrid Eulerian-Lagrangian representation that evolves vorticity and flow map quantities on vortex particles, while reconstructing velocity on a background grid. The method integrates three key components: (1) a vorticity-based particle flow map framework, (2) an accurate Hessian evolution scheme on particles, and (3) a solid boundary treatment for no-through and no-slip conditions in VPFM. These components collectively allow a substantially longer flow map length (3-12 times longer) than the state-of-the-art, enhancing vorticity preservation over extended spatiotemporal domains. We validated the performance of VPFM through diverse simulations, demonstrating its effectiveness in capturing complex vortex dynamics and turbulence phenomena.
               </p>
             </div>
           </div>
