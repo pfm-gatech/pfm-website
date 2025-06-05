@@ -267,6 +267,7 @@
     <ul>
       <li><a href="#post-compressible">Fluid Simulation on Compressible Flow Maps</a></li>
       <li><a href="#post-vpfm">Fluid Simulation on Vortex Particle Flow Maps</a></li>
+      <li><a href="#post-evm">An Eulerian Vortex Method on Flow Maps</a></li>
     </ul>
   </aside>
 
@@ -314,20 +315,19 @@
             <div class="post-content">
               
               <h3>Fluid Simulation on Vortex Particle Flow Maps</h3>
-              <!-- <p class="post-meta">June 5, 2025 &mdash; by Duowen Chen</p> -->
+              <!-- <p class="post-meta">June 5, 2025 &mdash; by Sinan Wang</p> -->
               <p class="post-meta">June 5, 2025 |</p>
               <img src="./pub_img/vpfm.png" alt="SIGGRAPH 2025 VPFM">
               <p class="post-excerpt">
                 We are thrilled to announce that our paper "Fluid Simulation on Vortex Particle Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
-                Our work revisits the classical Vortex-In-Cell (VIC) method through a modern flow map perspective, extending traditional vortex particles into <b>vortex particle flow maps</b> that support long-term, stable, and accurate vortex evolution.</br>
-                By integrating higher-order information like vorticity gradients and flow map Hessians, we enable vortex-preserving simulations beyond the reach of existing methods. This approach successfully bridges the numerical-physical gap in vorticity transport, achieving <b>stable flow maps 3–12× longer </b> in various benchmarks, effectively re-establishing VIC as a competitive tool in graphics.  </br>
+                Our work revisits the classical Vortex-In-Cell (VIC) method through a modern flow map perspective, extending traditional vortex particles into <b>vortex particle flow maps</b> that support long-term, stable, and accurate vortex evolution.
+                By integrating higher-order information like vorticity gradients and flow map Hessians, we enable vortex-preserving simulations beyond the reach of existing methods. This approach successfully achieves <b>stable flow maps 3–12× longer </b> in various benchmarks, effectively re-establishing VIC as a competitive tool in graphics.  </br>
 
-                Key highlights: </br>
-                ✅ A unified vortex particle flow map (VPFM) framework for transporting vorticity in long-term simulations.</br>
-                ✅ Introduction of flow map Hessians and higher-order vortex quantities for improved spatiotemporal coherence.</br>
-                ✅ Boundary-aware VPFM that supports no-through and approximated no-slip conditions.</br>
-                ✅ 3–12× longer stable simulations in 2D, and up to 30× longer vortex preservation in 3D than previous methods.</br>
-                ✅ Revives the VIC method as a viable alternative to traditional velocity-based solvers in graphics.
+                <b>Key highlights:</b></br>
+                ✅ A vorticity-based particle flow map framework (VPFM) for fluid simulation.</br>
+                ✅ Introduction of flow map Hessians and higher-order vortex quantities for stable long-range flow maps (3–12× longer).</br>
+                ✅ Compatible boundary treatment in VPFM that supports no-through and approximated no-slip conditions.</br>
+                ✅ Revives the VIC method as a viable alternative to traditional velocity-based solvers in graphics.</br>
 
                 Checkout our full paper and simulation video for more details!</br>
               </p>
@@ -341,6 +341,42 @@
               <p class="post-excerpt">
               <b>Full Abstract</b>
               We propose the Vortex Particle Flow Map (VPFM) method to simulate incompressible flow with complex vortical evolution in the presence of dynamic solid boundaries. The core insight of our approach is that vorticity is an ideal quantity for evolution on particle flow maps, enabling significantly longer flow map distances compared to other fluid quantities like velocity or impulse. To achieve this goal, we developed a hybrid Eulerian-Lagrangian representation that evolves vorticity and flow map quantities on vortex particles, while reconstructing velocity on a background grid. The method integrates three key components: (1) a vorticity-based particle flow map framework, (2) an accurate Hessian evolution scheme on particles, and (3) a solid boundary treatment for no-through and no-slip conditions in VPFM. These components collectively allow a substantially longer flow map length (3-12 times longer) than the state-of-the-art, enhancing vorticity preservation over extended spatiotemporal domains. We validated the performance of VPFM through diverse simulations, demonstrating its effectiveness in capturing complex vortex dynamics and turbulence phenomena.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Post Item 3 -->
+          <div id="post-evm" class="post-item">
+            <div class="post-content">
+              
+              <h3>An Eulerian Vortex Method on Flow Maps</h3>
+              <!-- <p class="post-meta">June 5, 2025 &mdash; by Sinan Wang</p> -->
+              <p class="post-meta">Dec 1, 2024 |</p>
+              <img src="./pub_img/evm_post.jpg" alt="SIGGRAPH Asia 2024 EVM">
+              <p class="post-excerpt">
+                We are thrilled to announce that our paper "Fluid Simulation on Vortex Particle Flow Maps" has been accepted to SIGGRAPH Asia 2024! 🎉🎉🎉</br> 
+                This work introduces a new Eulerian vortex simulation framework grounded in flow maps. Unlike traditional Lagrangian or velocity-based solvers, our method transports vorticity directly on the grid using a bi-directional marching scheme, achieving both numerical stability and visual fidelity for complex vortical structures.
+                Central to our system is a new vorticity-to-velocity solver that enforces solid boundary conditions without relying on streamfunctions, enabling high-quality simulations of vortex phenomena such as leapfrogging, vortex shedding, and solid-fluid interactions—all fully in Eulerian form.</br>
+
+              <b>Key highlights:</b></br>
+              ✅ An Eulerian vortex method that evolves vorticity directly on flow maps.</br>
+              ✅ Bi-directional marching scheme for accurate flow map and Jacobian computation.</br>
+              ✅ Matrix-free, GPU-friendly Poisson solver for velocity-vorticity reconstruction with boundary conditions.</br>
+              ✅ Robust simulation results including vortex collisions, leapfrogging, and moving-solid vortex shedding. </br>
+
+                Checkout our full paper and simulation video for more details!</br>
+              </p>
+              <p>
+                📄 <a href="https://dl.acm.org/doi/pdf/10.1145/3687996">Paper</a></br>
+                🎞️ <a href="https://www.youtube.com/watch?v=okVnD-rCYrw">Simulation and validation videos</a></br>
+                💻 <a href="https://github.com/pfm-gatech/An-Eulerian-Vortex-Method-on-Flow-Maps">Source Code</a></br>
+                <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
+              </p>
+            </br>
+              <p class="post-excerpt">
+              <b>Full Abstract</b>
+              We present an Eulerian vortex method based on the theory of flow maps to simulate the complex vortical motions of incompressible fluids. Central to our method is the novel incorporation of the flow-map transport equations for line elements, which, in combination with a bi-directional marching scheme for flow maps, enables the high-fidelity Eulerian advection of vorticity variables. The fundamental motivation is that, compared to impulse 𝒎, which has been recently bridged with flow maps to encouraging results, vorticity 𝝎 promises to be preferable for its numerically stability and physical interpretability. To realize the full potential of this novel formulation, we develop a new Poisson solving scheme for vorticity-to-velocity reconstruction that is both efficient and able to accurately handle the coupling near solid boundaries. We demonstrate the efficacy of our approach with a range of vortex simulation examples, including leapfrog vortices, vortex collisions, cavity flow, and the formation of complex vortical structures due to solid-fluid interactions.
               </p>
             </div>
           </div>
