@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PFM Research</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Scientific Professional Palette */
+    :root {
+      --primary-dark: #0D1B2A;
+      --primary-light: #1B263B;
+      --accent: #E07A5F;
+      --text-dark: #0D1B2A;
+      --bg-light: #F8F9FA;
+      --bg-white: #FFFFFF;
+      --border-light: #D3D3D3;
+      --sidebar-width: 300px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    nav {
+      background: var(--primary-dark);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0.75rem;
+    }
+    nav ul li {
+      margin: 0 1rem;
+    }
+    nav ul li a {
+      color: var(--bg-white);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.03rem;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    header#hero {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    header#hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 27, 42, 0.5);
+    }
+    header .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--bg-white);
+    }
+    header p {
+      font-size: 1.5rem;
+      color: var(--bg-white);
+      max-width: 1000px;
+      margin: 0.5rem auto 0;
+    }
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--border-light);
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .slide-btn:hover {
+      background: #fff;
+    }
+    #prev { left: 1rem; }
+    #next { right: 1rem; }
+
+    .post-nav {
+      position: fixed;
+      top: 480px; /* header height */
+      right: 0;
+      width: var(--sidebar-width);
+      bottom: 0;
+      background: #FAFBFB;                        /* Modified: slightly off-white background */
+      box-shadow: -2px 0 6px rgba(0,0,0,0.1);      /* Modified: subtle shadow on left */
+      border-radius: 8px 0 0 8px;                 /* Modified: rounded left corners */
+      padding: 1rem;
+      overflow-y: auto;
+      z-index: 900;
+    }
+    .post-nav h2 {
+      font-size: 1.1rem;                          /* Modified: slightly larger header text */
+      text-transform: uppercase;                  /* Modified: uppercase text */
+      letter-spacing: 0.05rem;                    /* Modified: increased letter-spacing */
+      margin-bottom: 0.75rem;
+      color: var(--primary-dark);
+      border-left: 3px solid var(--accent);
+      padding-left: 0.5rem;
+    }
+    .post-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .post-nav ul li a {
+      display: block;                             /* Modified: full-width clickable area */
+      padding: 0.5rem 0.75rem;                    /* Modified: extra padding */
+      border-radius: 4px;                         /* Modified: rounded link backgrounds */
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .post-nav ul li a:hover {
+      background: var(--accent);                  /* Modified: accent background on hover */
+      color: #fff;                                /* Modified: white text on hover */
+    }
+
+    /* Main Content Area */
+    .content {
+      margin-top: 2rem; /* space below header */
+      margin-right: calc(var(--sidebar-width) + 1rem); /* keep space for nav */
+      padding: 0 1rem;
+    }
+    main {
+      max-width: 960px; /* narrower to center posts */
+      margin: 0 auto; /* center within .content */
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2.section-title {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--accent);
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Posts List */
+    .posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .post-item {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-item img {
+      width: 100%;
+      height: auto;           /* Ensures correct aspect ratio */
+      object-fit: cover;
+      display: block;
+      margin: 1rem 0;          /* Modified: added vertical spacing above/below image */
+      border-radius: 4px;      /* Modified: rounded corners for a cleaner look */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Modified: subtle shadow to make image stand out */
+    }
+    .post-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-item h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+    }
+    .post-item h3 a {
+      text-decoration: none;
+      color: var(--primary-dark);
+      transition: color 0.2s;
+    }
+    .post-item h3 a:hover {
+      color: var(--accent);
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: #6C7A89;
+      margin-bottom: 0.75rem;
+    }
+    .post-excerpt {
+      margin-bottom: 1rem;
+    }
+    .read-more {
+      align-self: flex-start;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+      font-size: 0.95rem;
+    }
+    .read-more:hover {
+      background: #CD5B45;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--primary-light);
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    /* Hide floating nav on small screens */
+    @media (max-width: 768px) {
+      .post-nav { display: none; }
+      .content { margin-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./math.html">Overview</a></li>
+      <li><a href="./index.html#publications">Publication</a></li>
+      <li><a href="./index.html#preliminary-results">Benchmarks</a></li>
+    </ul>
+  </nav>
+
+  <header id="hero">
+    <button id="prev" class="slide-btn">‹</button>
+    <div class="header-content">
+      <h1>Particle Flow Map</h1>
+      <p>A Unified Fluid Simulation Method for Science and Graphics</p>
+    </div>
+    <button id="next" class="slide-btn">›</button>
+  </header>
+
+  <!-- Floating Right-Side Navigation -->
+  <aside class="post-nav">
+    <h2>Jump to Post</h2>
+    <ul>
+      <li><a href="#post-compressible">Fluid Simulation on Compressible Flow Maps</a></li>
+      <li><a href="#post-edge">Fluid Simulation on Compressible Flow Maps</a></li>
+      <li><a href="#post-vpfm">Fluid Simulation on Compressible Flow Maps</a></li>
+      <li><a href="#post-cleb">Fluid Simulation on Compressible Flow Maps</a></li>
+      <li><a href="#post-adaptive">Fluid Simulation on Compressible Flow Maps</a></li>
+      <li><a href="#post-realtime">Fluid Simulation on Compressible Flow Maps</a></li>
+    </ul>
+  </aside>
+
+  <div class="content">
+    <main>
+      <section id="posts">
+        <!-- <h2 class="section-title">SIGGRAPH 2025 Review and Takeaways</h2> -->
+        <div class="posts-list">
+          <!-- Post Item 1 -->
+          <div id="post-siggraph" class="post-item">
+            <div class="post-content">
+              
+              <h3>Fluid Simulation on Compressible Flow Maps</h3>
+              <!-- <p class="post-meta">June 5, 2025 &mdash; by Duowen Chen</p> -->
+              <p class="post-meta">June 5, 2025 |</p>
+              <img src="./pub_img/compressible.png" alt="SIGGRAPH 2025 Compressible">
+              <p class="post-excerpt">
+                We are thrilled to announce that our paper "Fluid Simulation on Compressible Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
+                Our method extends previous flow map methods to a unified framework that supports a wide rage of phenomena ranging from small scale water striders swimming on the surface of a
+                pond, to large scale ships on vast oceans, and a Dragon capsule landing on Mars. Our method is verified to achieve accuracy caomparable with WENO schemes for high-Mach compressible flows under classical JCP benchmarks. 
+                meanwhile, giving better vorticity preservation quality for other compressible systems including shallow water equations and weakly compressible flows. </br>
+                Key highlights from our paper:</br>
+                ✅Vortices perservation for Shallow Water Equation simulation.</br>
+                ✅Comparable accuracy with WENO schemes for high-Mach compressible flows under classical JCP benchmarks.</br>
+                ✅Simulation of different Mach numbers from 0.2 to 6 Mach within same framework</br>
+                ✅Weakly compressible simulation for typical incompressible cases (e.g., smoke, ink torus breakup).
+
+                Checkout our full paper and simulation video for more details!</br>
+              </p>
+              <p>
+                📄 <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/index.html">Paper Preprint</a></br>
+                🎞️ <a href="https://www.youtube.com/watch?v=vb8ZIhlgvDE">Simulation and validation videos</a></br>
+                💻 <a href="">Source Code [Coming Soon]</a></br>
+                <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
+              </p>
+            </br>
+              <p class="post-excerpt">
+              <b>Full Abstract</b>
+              This paper presents a unified compressible flow map framework designed to accommodate diverse compressible flow systems, including high-Mach-number flows (e.g., shock waves and supersonic aircraft), weakly compressible systems (e.g., smoke plumes and ink diffusion), and incompressible systems evolving through compressible acoustic quantities (e.g., free-surface shallow water). At the core of our approach is a theoretical foundation for compressible flow maps based on Lagrangian path integrals, a novel advection scheme for the conservative transport of density and energy, and a unified numerical framework for solving compressible flows with varying pressure treatments. We validate our method across three representative compressible flow systems, characterized by varying fluid morphologies, governing equations, and compressibility levels, demonstrating its ability to preserve and evolve spatiotemporal features such as vortical structures and wave interactions governed by different flow physics. Our results highlight a wide range of novel phenomena, from ink torus breakup to delta wing tail vortices and vortex shedding on free surfaces, significantly expanding the range of fluid systems that flow-map methods can handle.</br>
+              </p>
+            </div>
+          </div>
+
+          <!-- Post Item 2 -->
+          <div id="post-optimization" class="post-item">
+            <img src="post_img/pfm-optimization-feature.png" alt="PFM Optimization for Real-Time">
+            <div class="post-content">
+              <h3><a href="post-2025-05-pfm-optimization.html">Optimizing PFM for Real-Time Applications</a></h3>
+              <p class="post-meta">May 20, 2025 &mdash; by Duowen Chen</p>
+              <p class="post-excerpt">
+                In-depth discussion on GPU-centric acceleration strategies for Particle Flow Map (PFM), including CUDA and Taichi optimizations, multi-resolution advection, and adaptive timestep control to achieve interactive frame rates.
+              </p>
+              <a class="read-more" href="post-2025-05-pfm-optimization.html">Read More</a>
+            </div>
+          </div>
+
+          <!-- Post Item 3 -->
+          <div id="post-jcp" class="post-item">
+            <img src="post_img/jcp-guidelines-feature.png" alt="JCP Submission Guidelines">
+            <div class="post-content">
+              <h3><a href="post-2025-04-jcp-submission-guidelines.html">Preparing Your Manuscript for JCP Submission</a></h3>
+              <p class="post-meta">April 10, 2025 &mdash; by Duowen Chen</p>
+              <p class="post-excerpt">
+                A concise guide on aligning your computational physics manuscript with the Journal of Computational Physics style: structure, tone, and formatting tips to increase your chances of acceptance.
+              </p>
+              <a class="read-more" href="post-2025-04-jcp-submission-guidelines.html">Read More</a>
+            </div>
+          </div>
+
+          <!-- Post Item 4 -->
+          <div id="post-workshops" class="post-item">
+            <img src="post_img/workshops-feature.png" alt="Upcoming Workshops">
+            <div class="post-content">
+              <h3><a href="post-2025-03-upcoming-workshops.html">Upcoming Workshops and Tutorials</a></h3>
+              <p class="post-meta">March 15, 2025 &mdash; by Duowen Chen</p>
+              <p class="post-excerpt">
+                Listing of interactive workshops on hybrid Eulerian-Lagrangian methods, implicit pressure solvers, and neural-SDF-enhanced free-surface simulations coming up this summer—registration details included.
+              </p>
+              <a class="read-more" href="post-2025-03-upcoming-workshops.html">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; Particle Flow Map @ Georgia Tech.</p>
+    </footer>
+  </div>
+
+  <script>
+    const bgImages = [
+      'background/image4.png',
+      'background/image2.png',
+      'background/image3.png',
+      'background/image1.png',
+      'background/image5.png'
+    ];
+    let current = 0;
+    const hero = document.getElementById('hero');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    function showSlide(idx) {
+      hero.style.backgroundImage = `url('${bgImages[idx]}')`;
+    }
+    showSlide(current);
+    let interval = setInterval(() => {
+      current = (current + 1) % bgImages.length;
+      showSlide(current);
+    }, 5000);
+    prev.addEventListener('click', () => {
+      clearInterval(interval);
+      current = (current - 1 + bgImages.length) % bgImages.length;
+      showSlide(current);
+    });
+    next.addEventListener('click', () => {
+      clearInterval(interval);
+      current = (current + 1) % bgImages.length;
+      showSlide(current);
+    });
+  </script>
+</body>
+</html>
