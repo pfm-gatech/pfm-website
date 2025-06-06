@@ -277,6 +277,37 @@
       <section id="posts">
         <!-- <h2 class="section-title">SIGGRAPH 2025 Review and Takeaways</h2> -->
         <div class="posts-list">
+
+          <div id="post-cirrus" class="post-item">
+          <div class="post-content">
+            
+            <h3>Cirrus: Adaptive Hybrid Particle-Grid Flow Maps on GPU</h3>
+            <p class="post-meta">June 5, 2025 |</p>
+            <img src="./pub_img/25-cirrus.jpg" alt="SIGGRAPH 2025 Cirrus">
+            <p class="post-excerpt">
+              We are excited to announce that our paper "Cirrus: Adaptive Hybrid Particle-Grid Flow Maps on GPU" has been accepted to SIGGRAPH 2025! 🎉</br>
+              Cirrus is a high-performance GPU fluid simulator that combines the best of both particle and grid-based methods. Our framework introduces a hybrid Eulerian-Lagrangian flow map representation, enabling adaptive simulation at resolutions up to <code>512×512×2048</code> on a single RTX 4090 GPU. It delivers high-quality vortex preservation with speedups up to 100× over uniform-grid baselines.</br>
+              Key highlights from our paper:</br>
+              ✅ Fully adaptive flow map representation with particle-grid hybridization</br>
+              ✅ GPU-accelerated octree grid structure using 8×8×8 tiles</br>
+              ✅ Simulation of large-scale, high-vorticity scenarios such as vehicle wake flows and propeller-driven aircraft</br>
+              ✅ Open-source code now available to the community</br>
+              Try it out and see the details below!
+            </p>
+            <p>
+              📄 <a href="https://wang-mengdi.github.io/proj/25-cirrus/">Paper Website & Preprint</a></br>
+              🎞️ <a href="https://www.youtube.com/watch?v=vb8ZIhlgvDE">Simulation and validation videos</a></br>
+              💻 <a href="https://github.com/wang-mengdi/Cirrus">Source Code</a></br>
+            </p>
+            </br>
+            <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              We propose the adaptive hybrid particle-grid flow map method, a novel flow-map approach that leverages Lagrangian particles to simultaneously transport impulse and guide grid adaptation, introducing a fully adaptive flow map-based fluid simulation framework. The core idea of our method is to maintain flow-map trajectories separately on grid nodes and particles: the grid-based representation tracks long-range flow maps at a coarse spatial resolution, while the particle-based representation tracks both long and short-range flow maps, enhanced by their gradients, at a fine resolution. This hybrid Eulerian-Lagrangian flow-map representation naturally enables adaptivity for both advection and projection steps. We implement this method in Cirrus, a GPU-based fluid simulation framework designed for octree-like adaptive grids enhanced with particle trackers. The efficacy of our system is demonstrated through numerical tests and various simulation examples, achieving up to 512×512×2048 effective resolution on an RTX 4090 GPU. We achieve a 1.5 to 2× speedup with our GPU optimization over the Particle Flow Map method on the same hardware, while the adaptive grid implementation offers efficiency gains of one to two orders of magnitude by reducing computational resource requirements.
+            </p>
+          </div>
+        </div>
+
+
           <!-- Post Item 1 -->
           <div id="post-compressible" class="post-item">
             <div class="post-content">
