@@ -268,6 +268,7 @@
       <li><a href="#post-compressible">Fluid Simulation on Compressible Flow Maps</a></li>
       <li><a href="#post-vpfm">Fluid Simulation on Vortex Particle Flow Maps</a></li>
       <li><a href="#post-evm">An Eulerian Vortex Method on Flow Maps</a></li>
+      <li><a href="#post-sfi">Solid-Fluid Interaction on Particle Flow Maps</a></li>
     </ul>
   </aside>
 
@@ -298,7 +299,7 @@
                 Checkout our full paper and simulation video for more details!</br>
               </p>
               <p>
-                📄 <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/index.html">Paper Preprint</a></br>
+                📄 <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf">Paper Preprint</a></br>
                 🎞️ <a href="https://www.youtube.com/watch?v=vb8ZIhlgvDE">Simulation and validation videos</a></br>
                 💻 <a href="">Source Code [Coming Soon]</a></br>
                 <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
@@ -339,7 +340,7 @@
               </p>
             </br>
               <p class="post-excerpt">
-              <b>Full Abstract</b>
+              <b>Full Abstract: </b>
               We propose the Vortex Particle Flow Map (VPFM) method to simulate incompressible flow with complex vortical evolution in the presence of dynamic solid boundaries. The core insight of our approach is that vorticity is an ideal quantity for evolution on particle flow maps, enabling significantly longer flow map distances compared to other fluid quantities like velocity or impulse. To achieve this goal, we developed a hybrid Eulerian-Lagrangian representation that evolves vorticity and flow map quantities on vortex particles, while reconstructing velocity on a background grid. The method integrates three key components: (1) a vorticity-based particle flow map framework, (2) an accurate Hessian evolution scheme on particles, and (3) a solid boundary treatment for no-through and no-slip conditions in VPFM. These components collectively allow a substantially longer flow map length (3-12 times longer) than the state-of-the-art, enhancing vorticity preservation over extended spatiotemporal domains. We validated the performance of VPFM through diverse simulations, demonstrating its effectiveness in capturing complex vortex dynamics and turbulence phenomena.
               </p>
             </div>
@@ -375,8 +376,42 @@
               </p>
             </br>
               <p class="post-excerpt">
-              <b>Full Abstract</b>
+              <b>Full Abstract: </b>
               We present an Eulerian vortex method based on the theory of flow maps to simulate the complex vortical motions of incompressible fluids. Central to our method is the novel incorporation of the flow-map transport equations for line elements, which, in combination with a bi-directional marching scheme for flow maps, enables the high-fidelity Eulerian advection of vorticity variables. The fundamental motivation is that, compared to impulse 𝒎, which has been recently bridged with flow maps to encouraging results, vorticity 𝝎 promises to be preferable for its numerically stability and physical interpretability. To realize the full potential of this novel formulation, we develop a new Poisson solving scheme for vorticity-to-velocity reconstruction that is both efficient and able to accurately handle the coupling near solid boundaries. We demonstrate the efficacy of our approach with a range of vortex simulation examples, including leapfrog vortices, vortex collisions, cavity flow, and the formation of complex vortical structures due to solid-fluid interactions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Post Item 4 -->
+          <div id="post-sfi" class="post-item">
+            <div class="post-content">
+              
+              <h3>Solid-Fluid Interaction on Particle Flow Maps</h3>
+              <!-- <p class="post-meta">June 5, 2025 &mdash; by Sinan Wang</p> -->
+              <p class="post-meta">Dec 1, 2024 |</p>
+              <img src="./pub_img/sfi.png" alt="SIGGRAPH Asia 2024 sfi">
+              <p class="post-excerpt">
+                🔥🔥Checkout our recent published paper on SIGGRAPH ASIA 2024!🔥🔥</br> 
+                We introduce a path integral technique that solves the problem of perform two-way coupling between fluid and solid under flow map methods. At its heart are two clever tricks: an impulse-to-velocity transfer step that makes exchanging forces seamless, and a path-integral accumulation that carries coupling forces along each particle's trajectory.
+                By converting impulse variable mapped through flow map to a divergent velocity field, we can easily couple with existing solid-fluid interaction methods such as MPM and IBM with only trivial modifications. We showcase the ability of our method with various test cases ranging from decending parachute to dropping leaft to fish swimming</br>
+
+              <b>Our key highlights:</b></br>
+              📌 Provide a unified view that treats fluids and solids alike as particle flow maps.</br>
+              📌 Reformulated impulse gauge fluid model and flow map techniques to snable solid fluid coupling.</br>
+              📌 An easy approach that can be adopted to many coupling methods like IBM and MPM.</br>
+              
+              Checkout our full paper and simulation video for more details!</br>
+              </p>
+              <p>
+                📄 <a href="https://cdwj.github.io/projects/pfm-sfi-project-page/static/pdfs/SASIA_2024__Solid_Fluid_Interaction_on_Particle_Flow_Maps.pdf">Paper</a></br>
+                🎞️ <a href="https://www.youtube.com/watch?v=nUJe4QIhoB8">Simulation and validation videos</a></br>
+                💻 <a href="">Source Code [Coming Soon]</a></br>
+                <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
+              </p>
+            </br>
+              <p class="post-excerpt">
+              <b>Full Abstract: </b>
+              We propose a novel solid-fluid interaction method for coupling elastic solids with impulse flow maps. Our key idea is to unify the representation of fluid and solid components as particle flow maps with different lengths and dynamics. The solid-fluid coupling is enabled by implementing two novel mechanisms: first, we developed an impulse-to-velocity transfer mechanism to unify the exchanged physical quantities; second, we devised a particle path integral mechanism to accumulate coupling forces along each flow-map trajectory. Our framework integrates these two mechanisms into an Eulerian-Lagrangian impulse fluid simulator to accommodate traditional coupling models, exemplified by the Material Point Method (MPM) and Immersed Boundary Method (IBM), within a particle flow map framework. We demonstrate our method's efficacy by simulating solid-fluid interactions exhibiting strong vortical dynamics, including various vortex shedding and interaction examples across swimming, falling, breezing, and combustion.
               </p>
             </div>
           </div>
