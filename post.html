@@ -267,6 +267,7 @@
     <ul>
       <li><a href="#post-cirrus">Cirrus: Adaptive Hybrid Particle-Grid Flow Maps on GPU</a></li>
       <li><a href="#post-lfm">Leapfrog Flow Maps for Real-Time Fluid Simulation</a></li>
+      <li><a href="#post-edge">EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</a></li>
       <li><a href="#post-compressible">Fluid Simulation on Compressible Flow Maps</a></li>
       <li><a href="#post-vpfm">Fluid Simulation on Vortex Particle Flow Maps</a></li>
       <li><a href="#post-evm">An Eulerian Vortex Method on Flow Maps</a></li>
@@ -335,6 +336,31 @@
             <p class="post-excerpt">
               <b>Full Abstract</b></br>
               We propose Leapfrog Flow Maps (LFM) to simulate incompressible fluids with rich vortical flows in real time. Our key idea is to use a hybrid velocityimpulse scheme enhanced with leapfrog method to reduce the computational workload of impulse-based flow map methods, while possessing strong ability to preserve vortical structures and fluid details. In order to accelerate the impulse-to-velocity projection, we develop a fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver with customized GPU optimization, which makes projection comparable with impulse evolution in terms of time cost. We demonstrate the performance of our method and its efficacy in a wide range of examples and experiments, such as real-time simulated burning fire ball and delta wingtip vortices.
+            </p>
+          </div>
+        </div>
+
+	<div id="post-edge" class="post-item">
+        <div class="post-content">
+            
+            <h3>EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</h3>
+            <p class="post-meta">June 6, 2025 |</p>
+            <img src="./pub_img/25-edge.png" alt="SIGGRAPH 2025 LFM">
+            <p class="post-excerpt">
+              We are thrilled to announce that our paper "EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps" has been accepted to SIGGRAPH 2025! 🎉</br>
+              Epsilon Difference Gradient Evolution (EDGE) is a memory-efficient Hermite-based flow-map solver that eliminates velocity buffers by combining first-order Gradient Evolution with a tetrahedral Epsilon Difference scheme. This hybrid design reduces the spatial complexity of traditional flow-map methods from O(n) to O(1), enabling accurate and compact flow tracking over long trajectories without sacrificing vorticity preservation. </br>
+              Key highlights from our paper:</br>
+              ✅ A buffer-free flow-map method with O(1) memory usage, independent of flow-map length, while preserving vorticity accuracy comparable to buffer-based approaches</br>
+              ✅ A novel high-order advection scheme that evolves first-order derivatives and computes high-order mixed derivatives via the epsilon difference method, overcoming limitations of prior methods</br>
+              ✅ A tetrahedron-based epsilon element scheme that further reduces computational cost, enabling efficient flow-map simulations</br>
+            </p>
+            <p>
+              💻 <a href="">Source Code [Coming Soon]</a></br>
+            </p>
+            </br>
+            <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              We propose the Epsilon Difference Gradient Evolution (EDGE) method for accurate flow-map calculation on grids via Hermite interpolation without using velocity buffers. Our key idea is to integrate Gradient Evolution for accurate first-order derivatives and a tetrahedron-based Epsilon Difference scheme to compute higher-order derivatives with reduced memory consumption. EDGE achieves O(1) memory usage, independent of flow map length, while maintaining vorticity preservation comparable to buffer-based methods. We validate our methods across diverse vortical flow scenarios, demonstrating up to 90% backward map memory reduction and significant computational efficiency, broadening the applicability of flow-map methods to large-scale and complex fluid simulations. 
             </p>
           </div>
         </div>
