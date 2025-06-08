@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PFM Research</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Scientific Professional Palette */
+    :root {
+      --primary-dark: #0D1B2A;
+      --primary-light: #1B263B;
+      --accent: #E07A5F;
+      --text-dark: #0D1B2A;
+      --bg-light: #F8F9FA;
+      --bg-white: #FFFFFF;
+      --border-light: #D3D3D3;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+    nav { background: var(--primary-dark); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    nav ul { display: flex; justify-content: center; list-style: none; padding: 0.75rem; }
+    nav ul li { margin: 0 1rem; }
+    nav ul li a { color: var(--bg-white); text-decoration: none; font-weight: 600; letter-spacing: 0.03rem; }
+    nav ul li a:hover { color: var(--accent); }
+
+    header#hero { position: relative; width: 100%; height: 480px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    header#hero::before { content: ''; position: absolute; inset: 0; background: rgba(13, 27, 42, 0.5); }
+    header .header-content { position: relative; z-index: 1; text-align: center; }
+    header h1 { font-size: 3rem; font-weight: 700; color: var(--bg-white); }
+    header p { font-size: 1.5rem; color: var(--bg-white); max-width: 1000px; margin: 0.5rem auto 0; }
+    .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: 1px solid var(--border-light); color: var(--primary-dark); font-size: 1.5rem; padding: 0.2rem 0.5rem; cursor: pointer; border-radius: 4px; z-index: 2; }
+    .slide-btn:hover { background: #fff; }
+    #prev { left: 1rem; } #next { right: 1rem; }
+
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+    section { margin-bottom: 2rem; }
+    h2 { font-size: 1.5rem; color: var(--primary-dark); border-left: 4px solid var(--accent); padding-left: 0.5rem; margin-bottom: 1rem; }
+
+    .about p { background: var(--bg-white); padding: 1rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+    /* Publications List */
+    .publications-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .publication-item { display: flex; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 4px; overflow: hidden; }
+    .publication-item img { width: 300px; height: 100%; object-fit: cover; }
+    .publication-info { padding: 0.75rem 1rem; display: flex; flex-direction: column; }
+    .publication-info h3 { margin-bottom: 0.5rem; }
+    .publication-info .pub-meta { font-size: 0.85rem; color: #6C7A89; margin-bottom: 0.5rem; }
+    .publication-info .pub-abstract { margin-bottom: 0.75rem; }
+    .pub-buttons { margin-top: auto; display: flex; gap: 0.5rem; }
+    .pub-buttons a { background: var(--accent); color: #fff; padding: 0.2rem 0.7rem; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+    .pub-buttons a:hover { background: #CD5B45; }
+
+    /* Preliminary Results */
+    .results-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .result-item { position: relative; flex: 1 1 calc(50% - 1rem); height: 150px; overflow: hidden; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 4px; cursor: pointer; }
+    .result-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    /* Hide caption when expanded so image is not blocked */
+    .result-item.expanded .result-caption { display: none; }
+    .result-item.expanded { overflow: visible; z-index: 10; }
+    .result-item.expanded img { position: absolute; top: 0; left: 50%; transform: translateX(-50%) translateY(-50%) scale(0.8); width: auto; height: auto; max-width: none; max-height: none; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+    .result-caption { position: absolute; bottom: 0; width: 100%; background: var(--bg-light); padding: 0.5rem; font-size: 0.9rem; }
+
+    #team .member { display: flex; align-items: center; }
+    #team .member img { border-radius: 50%; width: 50px; height: 50px; margin-right: 1rem; }
+
+    footer { text-align: center; padding: 1rem; background: var(--primary-light); color: #fff; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="./index.html">News</a></li>
+      <li><a href="./math.html">Overview</a></li>
+      <li><a href="./publication.html">Publications</a></li>
+      <li><a href="./publication.html#preliminary-results">Benchmarks</a></li>
+      <li><a href="./software.html">Softwares</a></li>
+    </ul>
+  </nav>
+
+  <!-- <header id="hero">
+    <button id="prev" class="slide-btn">‹</button>
+    <div class="header-content">
+      <h1>Particle Flow Map</h1>
+      <p>A Unified Fluid Simulation Method for Science and Graphics</p>
+    </div>
+    <button id="next" class="slide-btn">›</button>
+  </header> -->
+
+  <main>
+    <section>
+      <h2>Our GitHub Projects</h2>
+      <p>
+        <ul>
+            <li><em>PFM Hub Website:</em> <a href="https://pfm-gatech.github.io/pfm-website/index.html">https://pfm-gatech.github.io/pfm-website/index.html</a></li>
+            <li><em>NFM:</em> <a href="https://github.com/yitongdeng-projects/neural_flow_maps_code">https://github.com/yitongdeng-projects/neural_flow_maps_code</a></li>
+            <li><em>PFM:</em> <a href="https://github.com/pfm-gatech/particle-flow-maps">https://github.com/pfm-gatech/particle-flow-maps</a></li>
+            <li><em>EVM:</em> <a href="https://github.com/pfm-gatech/An-Eulerian-Vortex-Method-on-Flow-Maps">https://github.com/pfm-gatech/An-Eulerian-Vortex-Method-on-Flow-Maps</a></li>
+            <li><em>SFI:</em> <a href="https://github.com/CDWJ/pfm-sfi">https://github.com/CDWJ/pfm-sfi</a></li>
+            <li><em>LFM:</em> <a href="https://github.com/yuchen-sun-cg/lfm">https://github.com/yuchen-sun-cg/lfm</a></li>
+            <li><em>Cirrus:</em> <a href="https://github.com/wang-mengdi/Cirrus">https://github.com/wang-mengdi/Cirrus</a></li>
+        </ul>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Particle Flow Map @ Georgia Tech.</p>
+  </footer>
+
+  <script>
+    const bgImages = ['background/image4.png','background/image2.png','background/image3.png','background/image1.png','background/image5.png'];
+    let current = 0;
+    const hero = document.getElementById('hero');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    function showSlide(idx) { hero.style.backgroundImage = `url('${bgImages[idx]}')`; }
+    showSlide(current);
+    let interval = setInterval(() => { current = (current+1)%bgImages.length; showSlide(current); }, 5000);
+    prev.addEventListener('click', () => { clearInterval(interval); current = (current-1+bgImages.length)%bgImages.length; showSlide(current); });
+    next.addEventListener('click', () => { clearInterval(interval); current = (current+1)%bgImages.length; showSlide(current); });
+    // Click to expand/collapse results
+    document.querySelectorAll('.result-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('expanded');
+      });
+    });
+  </script>
+</body>
+</html>
