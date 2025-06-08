@@ -290,6 +290,7 @@
       <li><a href="#post-evm">An Eulerian Vortex Method on Flow Maps</a></li>
       <li><a href="#post-sfi">Solid-Fluid Interaction on Particle Flow Maps</a></li>
       <li><a href="#post-igfm">An Impulse Ghost Fluid Method for Simulating Two-Phase Flows</a></li>
+      <li><a href="#post-pfm">Eulerian-Lagrangian Fluid Simulation on Particle Flow Maps</a></li>
     </ul>
   </aside>
 
@@ -562,6 +563,34 @@
             <p class="post-excerpt">
               <b>Full Abstract</b></br>
               This paper introduces a two-phase interfacial fluid model based on the impulse variable to capture complex vorticity-interface interactions. Our key idea is to leverage bidirectional flow map theory to enhance the transport accuracy of both vorticity and interfaces simultaneously and address their coupling within a unified Eulerian framework. At the heart of our framework is an impulse ghost fluid method to solve the two-phase incompressible fluid characterized by its interfacial dynamics. To deal with the history-dependent jump of gauge variables across a dynamic interface, we develop a novel path integral formula empowered by spatiotemporal buffers to convert the history-dependent jump condition into a geometry-dependent jump condition when projecting impulse to velocity. We demonstrate the efficacy of our approach in simulating and visualizing several interface-vorticity interaction problems with cross-phase vortical evolution, including interfacial whirlpool, vortex ring reflection, and leapfrogging bubble rings.
+            </p>
+          </div>
+        </div>
+
+  <div id="post-pfm" class="post-item">
+          <div class="post-content">
+            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2024)</div>
+            <h3>Eulerian-Lagrangian Fluid Simulation on Particle Flow Maps</h3>
+            <p class="post-meta">July 19, 2024 |</p>
+            <img src="./pub_img/pfm.jpg" alt="SIGGRAPH 2024 PFM">
+            <p class="post-excerpt">
+              🎉 We’re excited to announce that our latest work has been accepted to SIGGRAPH 2024! 🎉</br>
+              In this paper, we introduce a novel Particle Flow Map (PFM) method that enables accurate long-range advection for incompressible fluid simulation. Built upon the insight that a forward-simulated particle trajectory naturally embodies a perfect flow map, we construct a hybrid Eulerian-Lagrangian solver that achieves state-of-the-art vorticity preservation while maintaining low memory cost and high computational efficiency.</br>
+              <b>Key highlights from our paper:</b></br>
+              ✅ A particle representation for long-range, bi-directional flow maps.</br>
+              ✅ A two-scale flow-map scheme, defined on a single particle trajectory, for mapping flow quantities with different reinitialization requirements.</br>
+              ✅ A particle-to-grid interpolation scheme to transfer flow maps from particles to grid nodes.</br>
+              ✅ A comprehensive Eulerian-Lagrangian solver based on the impulse fluid model, achieving state-of-the-art vorticity preservation capabilities while maintaining both low memory cost and high computational speed.</br>
+              Checkout our paper and simulation video for more details!
+            </p>
+            <p>
+              📄 <a href="https://zjw49246.github.io/projects/pfm/">Paper Website & Preprint</a></br>
+              🎞️ <a href="https://youtu.be/aErgFhxil7o?si=n-VBqcicf59jeGm8">Simulation and validation videos</a></br>
+            </p>
+            </br>
+            <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              We propose a novel Particle Flow Map (PFM) method to enable accurate long-range advection for incompressible fluid simulation. The foundation of our method is the observation that a particle trajectory generated in a forward simulation naturally embodies a perfect flow map. Centered on this concept, we have developed an Eulerian-Lagrangian framework comprising four essential components: Lagrangian particles for a natural and precise representation of bidirectional flow maps; a dual-scale map representation to accommodate the mapping of various flow quantities; a particle-to-grid interpolation scheme for accurate quantity transfer from particles to grid nodes; and a hybrid impulse-based solver to enforce incompressibility on the grid. The efficacy of PFM has been demonstrated through various simulation scenarios, highlighting the evolution of complex vortical structures and the details of turbulent flows. Notably, compared to NFM, PFM reduces computing time by up to 49 times and memory consumption by up to 41%, while enhancing vorticity preservation as evidenced in various tests like leapfrog, vortex tube, and turbulent flow.
             </p>
           </div>
         </div>
