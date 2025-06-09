@@ -42,15 +42,16 @@
 
     /* Publications List */
     .publications-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .publication-item { display: flex; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 4px; overflow: hidden; }
-    .publication-item img { width: 300px; height: 100%; object-fit: cover; }
-    .publication-info { padding: 0.75rem 1rem; display: flex; flex-direction: column; }
-    .publication-info h3 { margin-bottom: 0.5rem; }
+    .publication-item {display: flex; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 4px; overflow: hidden; max-height: 200px;}
+    .publication-item img { max-height: 200px; width: 300px; height: 100%; object-fit: cover; }
+    .publication-info {font-size: 0.9rem; padding: 0.75rem 1rem; display: flex; flex-direction: column; }
+    .publication-info h3 { font-size: 1.1rem; margin-bottom: 0.5rem;}
     .publication-info .pub-meta { font-size: 0.85rem; color: #6C7A89; margin-bottom: 0.5rem; }
     .publication-info .pub-abstract { margin-bottom: 0.75rem; }
     .pub-buttons { margin-top: auto; display: flex; gap: 0.5rem; }
     .pub-buttons a { background: var(--accent); color: #fff; padding: 0.2rem 0.7rem; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
     .pub-buttons a:hover { background: #CD5B45; }
+
 
     /* Preliminary Results */
     .results-list { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -75,7 +76,7 @@
       <li><a href="./math.html">Overview</a></li>
       <li><a href="./publication.html">Publications</a></li>
       <li><a href="./publication.html#preliminary-results">Benchmarks</a></li>
-      <li><a href="./software.html">Softwares</a></li>
+      <li><a href="./software.html">Software</a></li>
     </ul>
   </nav>
 
@@ -99,12 +100,99 @@
     <section id="publications">
       <h2>Selected Publications</h2>
       <div class="publications-list">
+
+        <div class="publication-item">
+          <img src="pub_img/pfm_leapfrog.png" alt="lfm">
+          <div class="publication-info">
+            <h4>Leapfrog Flow Maps for Real-Time Fluid Simulation</h4>
+            <div class="pub-meta">Yuchen Sun, Junlin Li, Ruicheng Wang, Sinan Wang, Zhiqi Li, Bart G. Van Bloemen Waanders, Bo Zhu</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2025), Volume 44, Issue 4 (to appear)</div>
+            <div class="pub-buttons">
+              <a href="https://yuchen-sun-cg.github.io/projects/lfm/static/pdfs/SIG_2025_Leapfrog_Flow_Maps.pdf">Download PDF</a>
+              <a href="https://yuchen-sun-cg.github.io/projects/lfm/">View Page</a>
+              <a href="https://www.youtube.com/watch?v=-LK3ZDMByCE">Video</a>
+              <a href="https://github.com/yuchen-sun-cg/lfm">Github</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <img src="pub_img/compressible.png" alt="compressible">
+          <div class="publication-info">
+            <h4>Fluid Simulation on Compressible Flow Maps</h4>
+            <div class="pub-meta">Duowen Chen*, Zhiqi Li* (joint 1st authors), Taiyuan Zhang, Jinjin He, Junwei Zhou, Bart G van Bloemen Waanders, Bo Zhu</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2025), Volume 44, Issue 4 (to appear)</div>
+            <div class="pub-buttons">
+              <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf">Download PDF</a>
+              <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/index.html">View Page</a>
+              <a href="https://youtu.be/vb8ZIhlgvDE">Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <img src="pub_img/pfm_clebsch.png" alt="cleb">
+          <div class="publication-info">
+            <h4>Clebsch Gauge Fluid on Particle Flow Maps</h4>
+            <div class="pub-meta">Zhiqi Li, Candong Lin, Duowen Chen, Xinyi Zhou, Shiying Xiong, Bo Zhu</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2025), Volume 44, Issue 4 (to appear)</div>
+            <div class="pub-buttons">
+              <a href="https://pearseven.github.io/PFMClebschProject/static/pdfs/SIG_2025__Clebsch_PFM_Upload.pdf">Download PDF</a>
+              <a href="https://pearseven.github.io/PFMClebschProject/">View Page</a>
+              <a href="https://youtu.be/U0iTO8tfRK0">Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <img src="pub_img/25-edge.png" alt="edge">
+          <div class="publication-info">
+            <h4>EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</h4>
+            <div class="pub-meta">Zhiqi Li*, Ruicheng Wang*, Junlin Li* (joint 1st authors), Duowen Chen, Sinan Wang, Bo Zhu</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2025), Volume 44, Issue 4 (to appear)</div>
+            <div class="pub-buttons">
+              <a href="https://pearseven.github.io/EDGEProject/static/pdfs/SIG_2025__Buffer_free_flow_map.pdf">Download PDF</a>
+              <a href="https://pearseven.github.io/EDGEProject/">View Page</a>
+              <a href="https://youtu.be/IH4WWuEFoqA">Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <img src="pub_img/pfm_adaptive.jpg" alt="edge">
+          <div class="publication-info">
+            <h4>Cirrus: Adaptive Hybrid Particle-Grid Flow Maps on GPU</h4>
+            <div class="pub-meta">Mengdi Wang, Fan Feng, Junlin Li, Bo Zhu</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2025), Volume 44, Issue 4 (to appear)</div>
+            <div class="pub-buttons">
+              <a href="https://wang-mengdi.github.io/proj/25-cirrus/cirrus-preprint.pdf">Download PDF</a>
+              <a href="https://wang-mengdi.github.io/proj/25-cirrus/">View Page</a>
+              <a href="https://youtu.be/cANbIa_m3mY">Video</a>
+              <a href="https://github.com/wang-mengdi/Cirrus">Github</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <img src="pub_img/vpfm.png" alt="vpfm">
+          <div class="publication-info">
+            <h4>Fluid Simulation on Vortex Particle Flow Maps</h4>
+            <div class="pub-meta">Sinan Wang, Junwei Zhou, Fan Feng, Zhiq i Li, Yuchen Sun, Duowen Chen, Greg Turk, Bo Zhu</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2025), Volume 44, Issue 4 (to appear)</div>
+            <div class="pub-buttons">
+              <a href="https://arxiv.org/pdf/2505.21946">Download PDF</a>
+              <a href="https://vpfm.sinanw.com/">View Page</a>
+              <a href="https://youtu.be/8DukQvmr2EI">Video</a>
+            </div>
+          </div>
+        </div>
+
         <div class="publication-item">
           <img src="pub_img/multiphase.png" alt="Publication 1">
           <div class="publication-info">
             <h4>An Impulse Ghost Fluid Method for Simulating Two-Phase Flows</h4>
             <div class="pub-meta">Yuchen Sun, Linglai Chen, Weiyuan Zeng, Tao Du, Shiying Xiong, and Bo Zhu</div>
-            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024)</div>
+            <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024), Volume 43, Issue 6</div>
             <div class="pub-buttons">
               <a href="https://dl.acm.org/doi/pdf/10.1145/3687963">Download PDF</a>
               <a href="https://yuchen-sun-cg.github.io/projects/igfm/">View Page</a>
@@ -114,11 +202,11 @@
         </div>
 
         <div class="publication-item">
-            <img src="pub_img/ink.png" alt="Publication 1">
+            <img src="pub_img/pfm_laden.jpg" alt="Publication 1">
             <div class="publication-info">
                 <h4>Particle-Laden Fluid on Flow Maps</h4>
                 <div class="pub-meta">Zhiqi Li, Duowen Chen, Candong Lin, Jinyuan Liu, and Bo Zhu</div>
-                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024) (Best Paper Award)</div>
+                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024), Volume 43, Issue 6 (Best Paper Award)</div>
                 <div class="pub-buttons">
                   <a href="https://arxiv.org/pdf/2409.06246">Download PDF</a>
                   <a href="https://pearseven.github.io/LadenFlowProject/">View Page</a>
@@ -132,7 +220,7 @@
             <div class="publication-info">
                 <h4>An Eulerian Vortex Method on Flow Maps</h4>
                 <div class="pub-meta">Sinan Wang, Yitong Deng, Molin Deng, Hong-Xing Yu, Junwei Zhou, Duowen Chen, Taku Komura, Jiajun Wu, and Bo Zhu</div>
-                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024)</div>
+                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024), Volume 43, Issue 6</div>
                 <div class="pub-buttons">
                   <a href="https://dl.acm.org/doi/pdf/10.1145/3687996">Download PDF</a>
                   <a href="https://evm.sinanw.com/">View Page</a>
@@ -147,11 +235,12 @@
             <div class="publication-info">
                 <h4>Solid-Fluid Interaction on Particle Flow Maps</h4>
                 <div class="pub-meta">Duowen Chen, Zhiqi Li, Junwei Zhou, Fan Feng, Tao Du, and Bo Zhu</div>
-                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024)</div>
+                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2024), Volume 43, Issue 6</div>
                 <div class="pub-buttons">
                   <a href="https://cdwj.github.io/projects/pfm-sfi-project-page/static/pdfs/SASIA_2024__Solid_Fluid_Interaction_on_Particle_Flow_Maps.pdf">Download PDF</a>
                   <a href="https://cdwj.github.io/projects/pfm-sfi-project-page/index.html">View Page</a>
                   <a href="https://youtu.be/nUJe4QIhoB8">Video</a>
+                  <a href="https://github.com/CDWJ/pfm-sfi">GitHub</a>
                 </div>
               </div>
           </div>
@@ -161,7 +250,7 @@
             <div class="publication-info">
                 <h4>Eulerian-Lagrangian Fluid Simulation on Particle Flow Maps</h4>
                 <div class="pub-meta">Junwei Zhou, Duowen Chen, Molin Deng, Yitong Deng, Yuchen Sun, Sinan Wang, Shiying Xiong, and Bo Zhu</div>
-                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2024)</div>
+                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH 2024), Volume 43, Issue 4</div>
                 <div class="pub-buttons">
                   <a href="https://www.arxiv.org/pdf/2405.09672">Download PDF</a>
                   <a href="https://zjw49246.github.io/projects/pfm/">View Page</a>
@@ -190,7 +279,7 @@
             <div class="publication-info">
                 <h4>Fluid Simulation on Neural Flow Maps</h4>
                 <div class="pub-meta">Yitong Deng, Hong-Xing Yu, Diyang Zhang, Jiajun Wu, and Bo Zhu</div>
-                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2023). (Best Paper Award)</div>
+                <div class="pub-meta">ACM Transactions on Graphics (SIGGRAPH Asia 2023), Volume 42, Issue 6 (Best Paper Award)</div>
                 <div class="pub-buttons">
                   <a href="https://yitongdeng-projects.github.io/neural_flow_maps_webpage/assets/paper/NFM_v1.pdf">Download PDF</a>
                   <a href="https://yitongdeng-projects.github.io/neural_flow_maps_webpage/">View Page</a>

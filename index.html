@@ -266,7 +266,7 @@
       <li><a href="./math.html">Overview</a></li>
       <li><a href="./publication.html">Publications</a></li>
       <li><a href="./publication.html#preliminary-results">Benchmarks</a></li>
-      <li><a href="./software.html">Softwares</a></li>
+      <li><a href="./software.html">Software</a></li>
     </ul>
   </nav>
 
@@ -300,6 +300,104 @@
       <section id="posts">
         <!-- <h2 class="section-title">SIGGRAPH 2025 Review and Takeaways</h2> -->
         <div class="posts-list">
+          <div id="post-lfm" class="post-item">
+          <div class="post-content">
+            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
+            <h3>Leapfrog Flow Maps for Real-Time Fluid Simulation</h3>
+            <p class="post-meta">June 5, 2025 |</p>
+            <img src="./pub_img/lfm.jpg" alt="SIGGRAPH 2025 LFM">
+            <p class="post-excerpt">
+              📢 We’re excited to share that our paper, “Leapfrog Flow Maps for Real-Time Fluid Simulation,”  co-authored with <a href="https://www.sandia.gov/ccr/staff/bart-g-van-bloemen-waanders/">Dr. van Bloemen Waanders</a> from DOE Sandia National Laboratories, has just been accepted to SIGGRAPH 2025! 
+              Leapfrog Flow Maps (LFM) combines velocity and impulse updates via a leapfrog integrator, and all the heavy lifting is handled by a matrix-free AMGPCG solver tuned for GPUs. The result? Real-time delta-wingtip vortex simulations at 256 × 128 × 128 resolution on a single RTX 4090.</br>
+              Key highlights from our paper:</br>
+              📌 A hybrid velocity-impulse time integrator to reduce both the projection times and the flow-map marching steps</br>
+              📌 A fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver on GPU</br>
+              📌 Large-scale fluid simulations in real time, such as fire balls and delta wingtip vortices</br>
+              📌 Open-source code now available to the community</br>
+              See our paper and code for more details!
+            </p>
+            <b>Please tryout our code and checkout out our simulation video below!</b></br>
+            <p>
+              📄 <a href="https://yuchen-sun-cg.github.io/projects/lfm/">Paper Website & Preprint</a></br>
+              🎞️ <a href="https://www.youtube.com/watch?v=-LK3ZDMByCE">Simulation and validation videos</a></br>
+              💻 <a href="https://github.com/yuchen-sun-cg/lfm">Source Code</a></br>
+            </p>
+            </br>
+            <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              We propose Leapfrog Flow Maps (LFM) to simulate incompressible fluids with rich vortical flows in real time. Our key idea is to use a hybrid velocityimpulse scheme enhanced with leapfrog method to reduce the computational workload of impulse-based flow map methods, while possessing strong ability to preserve vortical structures and fluid details. In order to accelerate the impulse-to-velocity projection, we develop a fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver with customized GPU optimization, which makes projection comparable with impulse evolution in terms of time cost. We demonstrate the performance of our method and its efficacy in a wide range of examples and experiments, such as real-time simulated burning fire ball and delta wingtip vortices.
+            </p>
+          </div>
+        </div>
+
+        <!-- Post Item 1 -->
+          <div id="post-compressible" class="post-item">
+            <div class="post-content">
+              <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
+              <h3>Fluid Simulation on Compressible Flow Maps</h3>
+              <!-- <p class="post-meta">June 5, 2025 &mdash; by Duowen Chen</p> -->
+              <p class="post-meta">June 5, 2025 |</p>
+              <img src="./pub_img/compressible.png" alt="SIGGRAPH 2025 Compressible">
+              <p class="post-excerpt">
+                <!-- We are thrilled to announce that our paper "Fluid Simulation on Compressible Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
+                Our method extends previous flow map methods to a unified framework that supports a wide rage of phenomena ranging from small scale water striders swimming on the surface of a
+                pond, to large scale ships on vast oceans, and a Dragon capsule landing on Mars. Our method is verified to achieve accuracy caomparable with WENO schemes for high-Mach compressible flows under classical JCP benchmarks. 
+                meanwhile, giving better vorticity preservation quality for other compressible systems including shallow water equations and weakly compressible flows. </br>
+                Key highlights from our paper:</br> -->
+
+                Exciting news—our paper “Fluid Simulation on Compressible Flow Maps”, in collaboration with <a href="https://www.sandia.gov/ccr/staff/bart-g-van-bloemen-waanders/">Dr. van Bloemen Waanders</a> from DOE Sandia National Laboratories, has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
+                In this work, we bring existing flow-map techniques under one roof, handling phenomena from tiny water-striders skimming pond surfaces to ships on vast oceans and even a Dragon capsule’s descent onto Mars. We’ve validated our solver against standard JCP benchmarks, demonstrating accuracy on par with high-order WENO methods for supersonic compressible flows, while simultaneously improving vorticity preservation in shallow-water and weakly compressible scenarios.
+                </br>
+                <b>Key highlights from our paper:</b></br>
+                ✅Vortices perservation for Shallow Water Equation simulation.</br>
+                ✅Comparable accuracy with WENO schemes for high-Mach compressible flows under classical JCP benchmarks.</br>
+                ✅Simulation of different Mach numbers from 0.2 to 6 Mach within same framework</br>
+                ✅Weakly compressible simulation for typical incompressible cases (e.g., smoke, ink torus breakup).
+                </p>
+                <p>
+                Checkout our full paper and simulation video for more details! <b>Stay tuned to our code release!</b></br>
+              </p>
+              <p>
+                📄 <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf">Paper Preprint</a></br>
+                🎞️ <a href="https://www.youtube.com/watch?v=vb8ZIhlgvDE">Simulation and validation videos</a></br>
+                💻 <a href="">Source Code [Coming Soon]</a></br>
+                <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
+              </p>
+            </br>
+              <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              This paper presents a unified compressible flow map framework designed to accommodate diverse compressible flow systems, including high-Mach-number flows (e.g., shock waves and supersonic aircraft), weakly compressible systems (e.g., smoke plumes and ink diffusion), and incompressible systems evolving through compressible acoustic quantities (e.g., free-surface shallow water). At the core of our approach is a theoretical foundation for compressible flow maps based on Lagrangian path integrals, a novel advection scheme for the conservative transport of density and energy, and a unified numerical framework for solving compressible flows with varying pressure treatments. We validate our method across three representative compressible flow systems, characterized by varying fluid morphologies, governing equations, and compressibility levels, demonstrating its ability to preserve and evolve spatiotemporal features such as vortical structures and wave interactions governed by different flow physics. Our results highlight a wide range of novel phenomena, from ink torus breakup to delta wing tail vortices and vortex shedding on free surfaces, significantly expanding the range of fluid systems that flow-map methods can handle.</br>
+              </p>
+            </div>
+          </div>
+
+          <div id="post-edge" class="post-item">
+        <div class="post-content">
+            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
+            <h3>EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</h3>
+            <p class="post-meta">June 6, 2025 |</p>
+            <img src="./pub_img/25-edge.png" alt="SIGGRAPH 2025 LFM">
+            <p class="post-excerpt">
+              It’s a pleasure to report that our work, “EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps”, has just been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
+              Our Epsilon Difference Gradient Evolution (EDGE) solver marries a Hermite-based flow-map approach with a tetrahedral epsilon-difference scheme to eliminate velocity buffers entirely.
+              By combining first-order Gradient Evolution with this epsilon-difference trick, we collapse spatial complexity from O(n) to O(1), so you can trace flows over long paths without ever losing a hint of vorticity.</br>
+              <b>Here are the standout points from our work:</b></br>
+              🌟 A buffer-free flow-map method with O(1) memory usage, independent of flow-map length, while preserving vorticity accuracy comparable to buffer-based approaches</br>
+              🌟 A novel high-order advection scheme that evolves first-order derivatives and computes high-order mixed derivatives via the epsilon difference method, overcoming limitations of prior methods</br>
+              🌟 A tetrahedron-based epsilon element scheme that further reduces computational cost, enabling efficient flow-map simulations</br>
+            </p>
+            <p>
+              🎞️ <a href="https://youtu.be/IH4WWuEFoqA?si=aWzODBpFA7idMZIF">Simulation and validation videos</a></br>
+              💻 <a href="">Source Code [Coming Soon]</a></br>
+            </p>
+            </br>
+            <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              We propose the Epsilon Difference Gradient Evolution (EDGE) method for accurate flow-map calculation on grids via Hermite interpolation without using velocity buffers. Our key idea is to integrate Gradient Evolution for accurate first-order derivatives and a tetrahedron-based Epsilon Difference scheme to compute higher-order derivatives with reduced memory consumption. EDGE achieves O(1) memory usage, independent of flow map length, while maintaining vorticity preservation comparable to buffer-based methods. We validate our methods across diverse vortical flow scenarios, demonstrating up to 90% backward map memory reduction and significant computational efficiency, broadening the applicability of flow-map methods to large-scale and complex fluid simulations. 
+            </p>
+          </div>
+        </div>
+
           <div id="post-cirrus" class="post-item">
           <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
           <div class="post-content">
@@ -331,103 +429,7 @@
           </div>
         </div>
 
-	<div id="post-lfm" class="post-item">
-          <div class="post-content">
-            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
-            <h3>Leapfrog Flow Maps for Real-Time Fluid Simulation</h3>
-            <p class="post-meta">June 5, 2025 |</p>
-            <img src="./pub_img/lfm.jpg" alt="SIGGRAPH 2025 LFM">
-            <p class="post-excerpt">
-              📢 We’re excited to share that our paper, “Leapfrog Flow Maps for Real-Time Fluid Simulation,” <b> co-authored with Dr. van Bloemen Waanders from DOE Sandia National Laboratories</b>, has just been accepted to SIGGRAPH 2025! 
-              Leapfrog Flow Maps (LFM) combines velocity and impulse updates via a leapfrog integrator, and all the heavy lifting is handled by a matrix-free AMGPCG solver tuned for GPUs. The result? Real-time delta-wingtip vortex simulations at 256 × 128 × 128 resolution on a single RTX 4090.</br>
-              Key highlights from our paper:</br>
-              📌 A hybrid velocity-impulse time integrator to reduce both the projection times and the flow-map marching steps</br>
-              📌 A fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver on GPU</br>
-              📌 Large-scale fluid simulations in real time, such as fire balls and delta wingtip vortices</br>
-              📌 Open-source code now available to the community</br>
-              See our paper and code for more details!
-            </p>
-            <b>Please tryout our code and checkout out our simulation video below!</b></br>
-            <p>
-              📄 <a href="https://yuchen-sun-cg.github.io/projects/lfm/">Paper Website & Preprint</a></br>
-              🎞️ <a href="https://www.youtube.com/watch?v=-LK3ZDMByCE">Simulation and validation videos</a></br>
-              💻 <a href="https://github.com/yuchen-sun-cg/lfm">Source Code</a></br>
-            </p>
-            </br>
-            <p class="post-excerpt">
-              <b>Full Abstract</b></br>
-              We propose Leapfrog Flow Maps (LFM) to simulate incompressible fluids with rich vortical flows in real time. Our key idea is to use a hybrid velocityimpulse scheme enhanced with leapfrog method to reduce the computational workload of impulse-based flow map methods, while possessing strong ability to preserve vortical structures and fluid details. In order to accelerate the impulse-to-velocity projection, we develop a fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver with customized GPU optimization, which makes projection comparable with impulse evolution in terms of time cost. We demonstrate the performance of our method and its efficacy in a wide range of examples and experiments, such as real-time simulated burning fire ball and delta wingtip vortices.
-            </p>
-          </div>
-        </div>
-
-	<div id="post-edge" class="post-item">
-        <div class="post-content">
-            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
-            <h3>EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</h3>
-            <p class="post-meta">June 6, 2025 |</p>
-            <img src="./pub_img/25-edge.png" alt="SIGGRAPH 2025 LFM">
-            <p class="post-excerpt">
-              It’s a pleasure to report that our work, “EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps”, has just been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
-              Our Epsilon Difference Gradient Evolution (EDGE) solver marries a Hermite-based flow-map approach with a tetrahedral epsilon-difference scheme to eliminate velocity buffers entirely.
-              By combining first-order Gradient Evolution with this epsilon-difference trick, we collapse spatial complexity from O(n) to O(1), so you can trace flows over long paths without ever losing a hint of vorticity.</br>
-              <b>Here are the standout points from our work:</b></br>
-              🌟 A buffer-free flow-map method with O(1) memory usage, independent of flow-map length, while preserving vorticity accuracy comparable to buffer-based approaches</br>
-              🌟 A novel high-order advection scheme that evolves first-order derivatives and computes high-order mixed derivatives via the epsilon difference method, overcoming limitations of prior methods</br>
-              🌟 A tetrahedron-based epsilon element scheme that further reduces computational cost, enabling efficient flow-map simulations</br>
-            </p>
-            <p>
-              🎞️ <a href="https://youtu.be/IH4WWuEFoqA?si=aWzODBpFA7idMZIF">Simulation and validation videos</a></br>
-              💻 <a href="">Source Code [Coming Soon]</a></br>
-            </p>
-            </br>
-            <p class="post-excerpt">
-              <b>Full Abstract</b></br>
-              We propose the Epsilon Difference Gradient Evolution (EDGE) method for accurate flow-map calculation on grids via Hermite interpolation without using velocity buffers. Our key idea is to integrate Gradient Evolution for accurate first-order derivatives and a tetrahedron-based Epsilon Difference scheme to compute higher-order derivatives with reduced memory consumption. EDGE achieves O(1) memory usage, independent of flow map length, while maintaining vorticity preservation comparable to buffer-based methods. We validate our methods across diverse vortical flow scenarios, demonstrating up to 90% backward map memory reduction and significant computational efficiency, broadening the applicability of flow-map methods to large-scale and complex fluid simulations. 
-            </p>
-          </div>
-        </div>
-
-          <!-- Post Item 1 -->
-          <div id="post-compressible" class="post-item">
-            <div class="post-content">
-              <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
-              <h3>Fluid Simulation on Compressible Flow Maps</h3>
-              <!-- <p class="post-meta">June 5, 2025 &mdash; by Duowen Chen</p> -->
-              <p class="post-meta">June 5, 2025 |</p>
-              <img src="./pub_img/compressible.png" alt="SIGGRAPH 2025 Compressible">
-              <p class="post-excerpt">
-                <!-- We are thrilled to announce that our paper "Fluid Simulation on Compressible Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
-                Our method extends previous flow map methods to a unified framework that supports a wide rage of phenomena ranging from small scale water striders swimming on the surface of a
-                pond, to large scale ships on vast oceans, and a Dragon capsule landing on Mars. Our method is verified to achieve accuracy caomparable with WENO schemes for high-Mach compressible flows under classical JCP benchmarks. 
-                meanwhile, giving better vorticity preservation quality for other compressible systems including shallow water equations and weakly compressible flows. </br>
-                Key highlights from our paper:</br> -->
-
-                Exciting news—our paper “Fluid Simulation on Compressible Flow Maps”, <b>in collaboration with Dr. van Bloemen Waanders from DOE Sandia National Laboratories</b>, has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
-                In this work, we bring existing flow-map techniques under one roof, handling phenomena from tiny water-striders skimming pond surfaces to ships on vast oceans and even a Dragon capsule’s descent onto Mars. We’ve validated our solver against standard JCP benchmarks, demonstrating accuracy on par with high-order WENO methods for supersonic compressible flows, while simultaneously improving vorticity preservation in shallow-water and weakly compressible scenarios.
-                </br>
-                <b>Key highlights from our paper:</b></br>
-                ✅Vortices perservation for Shallow Water Equation simulation.</br>
-                ✅Comparable accuracy with WENO schemes for high-Mach compressible flows under classical JCP benchmarks.</br>
-                ✅Simulation of different Mach numbers from 0.2 to 6 Mach within same framework</br>
-                ✅Weakly compressible simulation for typical incompressible cases (e.g., smoke, ink torus breakup).
-                </p>
-                <p>
-                Checkout our full paper and simulation video for more details! <b>Stay tuned to our code release!</b></br>
-              </p>
-              <p>
-                📄 <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf">Paper Preprint</a></br>
-                🎞️ <a href="https://www.youtube.com/watch?v=vb8ZIhlgvDE">Simulation and validation videos</a></br>
-                💻 <a href="">Source Code [Coming Soon]</a></br>
-                <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
-              </p>
-            </br>
-              <p class="post-excerpt">
-              <b>Full Abstract</b></br>
-              This paper presents a unified compressible flow map framework designed to accommodate diverse compressible flow systems, including high-Mach-number flows (e.g., shock waves and supersonic aircraft), weakly compressible systems (e.g., smoke plumes and ink diffusion), and incompressible systems evolving through compressible acoustic quantities (e.g., free-surface shallow water). At the core of our approach is a theoretical foundation for compressible flow maps based on Lagrangian path integrals, a novel advection scheme for the conservative transport of density and energy, and a unified numerical framework for solving compressible flows with varying pressure treatments. We validate our method across three representative compressible flow systems, characterized by varying fluid morphologies, governing equations, and compressibility levels, demonstrating its ability to preserve and evolve spatiotemporal features such as vortical structures and wave interactions governed by different flow physics. Our results highlight a wide range of novel phenomena, from ink torus breakup to delta wing tail vortices and vortex shedding on free surfaces, significantly expanding the range of fluid systems that flow-map methods can handle.</br>
-              </p>
-            </div>
-          </div>
+          
           <!-- Post Item 2 -->
           <div id="post-vpfm" class="post-item">
             <div class="post-content">
@@ -464,7 +466,39 @@
           </div>
 
 
-          <!-- Post Item 3 -->
+
+          <div id="post-igfm" class="post-item">
+          <div class="post-content">
+            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
+            <h3>An Impulse Ghost Fluid Method for Simulating Two-Phase Flows</h3>
+            <p class="post-meta">June 5, 2025 |</p>
+            <img src="./pub_img/igfm.jpg" alt="SIGGRAPH Asia 2024 IGFM">
+            <p class="post-excerpt">
+             <!-- 🔥🔥Checkout our recent published paper on SIGGRAPH ASIA 2024!🔥🔥</br> 
+              We introduce a new two-phase fluid model based on impulse dynamics that captures these complex behaviors with striking accuracy. By combining bidirectional flow maps and a novel ghost fluid method, we unify vorticity and interface motion in a single Eulerian framework. From whirlpools to bubble ring leapfrogging, our simulations bring these phenomena to life</br>
+              Key highlights from our paper:</br> -->
+              🎉 We’re proud to share our latest work accepted at SIGGRAPH ASIA 2024! 🎉</br>
+              In this paper, we present a two-phase fluid model driven by impulse dynamics that reproduces intricate flow behaviors with unmatched fidelity. By fusing bidirectional flow maps with a cutting-edge ghost fluid method, we seamlessly integrate vorticity transport and interface motion in one Eulerian framework. From swirling whirlpools to bubble-ring leapfrogging, our simulations bring these phenomena vividly to life.</br>
+              <b>Key highlights from our paper:</b></br>
+              ✅ A novel Impulse Ghost Fluid Method (IGFM) for simulating two-phase fluid</br>
+              ✅ A novel Path-Integral-Projection scheme to tackle the historydependent jump of gauge variable on an Eulerian grid</br>
+              ✅ A novel Bidirectional-Marched-Flow-Map Level Set (BMFMLS) method to enhance volume preservation</br>
+              ✅ A two-phase flow solver to capture complex cross-interface vortex flow phenomena</br>
+              Checkout our paper for more details!
+            </p>
+            <p>
+              📄 <a href="https://yuchen-sun-cg.github.io/projects/igfm/">Paper Website & Preprint</a></br>
+              🎞️ <a href="https://www.youtube.com/watch?v=MbEyyH2UB3s">Simulation and validation videos</a></br>
+            </p>
+            </br>
+            <p class="post-excerpt">
+              <b>Full Abstract</b></br>
+              This paper introduces a two-phase interfacial fluid model based on the impulse variable to capture complex vorticity-interface interactions. Our key idea is to leverage bidirectional flow map theory to enhance the transport accuracy of both vorticity and interfaces simultaneously and address their coupling within a unified Eulerian framework. At the heart of our framework is an impulse ghost fluid method to solve the two-phase incompressible fluid characterized by its interfacial dynamics. To deal with the history-dependent jump of gauge variables across a dynamic interface, we develop a novel path integral formula empowered by spatiotemporal buffers to convert the history-dependent jump condition into a geometry-dependent jump condition when projecting impulse to velocity. We demonstrate the efficacy of our approach in simulating and visualizing several interface-vorticity interaction problems with cross-phase vortical evolution, including interfacial whirlpool, vortex ring reflection, and leapfrogging bubble rings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Post Item 3 -->
           <div id="post-evm" class="post-item">
             <div class="post-content">
               <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
@@ -526,7 +560,7 @@
               <p>
                 📄 <a href="https://cdwj.github.io/projects/pfm-sfi-project-page/static/pdfs/SASIA_2024__Solid_Fluid_Interaction_on_Particle_Flow_Maps.pdf">Paper</a></br>
                 🎞️ <a href="https://www.youtube.com/watch?v=nUJe4QIhoB8">Simulation and validation videos</a></br>
-                💻 <a href="">Source Code [Coming Soon]</a></br>
+                💻 <a href="https://github.com/CDWJ/pfm-sfi">Source Code</a></br>
                 <!-- <a class="read-more" href="">Code [Coming Soon]</a> -->
               </p>
             </br>
@@ -537,36 +571,6 @@
             </div>
           </div>
 
-	<div id="post-igfm" class="post-item">
-          <div class="post-content">
-            <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
-            <h3>An Impulse Ghost Fluid Method for Simulating Two-Phase Flows</h3>
-            <p class="post-meta">June 5, 2025 |</p>
-            <img src="./pub_img/igfm.jpg" alt="SIGGRAPH Asia 2024 IGFM">
-            <p class="post-excerpt">
-             <!-- 🔥🔥Checkout our recent published paper on SIGGRAPH ASIA 2024!🔥🔥</br> 
-              We introduce a new two-phase fluid model based on impulse dynamics that captures these complex behaviors with striking accuracy. By combining bidirectional flow maps and a novel ghost fluid method, we unify vorticity and interface motion in a single Eulerian framework. From whirlpools to bubble ring leapfrogging, our simulations bring these phenomena to life</br>
-              Key highlights from our paper:</br> -->
-              🎉 We’re proud to share our latest work accepted at SIGGRAPH ASIA 2024! 🎉</br>
-              In this paper, we present a two-phase fluid model driven by impulse dynamics that reproduces intricate flow behaviors with unmatched fidelity. By fusing bidirectional flow maps with a cutting-edge ghost fluid method, we seamlessly integrate vorticity transport and interface motion in one Eulerian framework. From swirling whirlpools to bubble-ring leapfrogging, our simulations bring these phenomena vividly to life.</br>
-              <b>Key highlights from our paper:</b></br>
-              ✅ A novel Impulse Ghost Fluid Method (IGFM) for simulating two-phase fluid</br>
-              ✅ A novel Path-Integral-Projection scheme to tackle the historydependent jump of gauge variable on an Eulerian grid</br>
-              ✅ A novel Bidirectional-Marched-Flow-Map Level Set (BMFMLS) method to enhance volume preservation</br>
-              ✅ A two-phase flow solver to capture complex cross-interface vortex flow phenomena</br>
-              Checkout our paper for more details!
-            </p>
-            <p>
-              📄 <a href="https://yuchen-sun-cg.github.io/projects/igfm/">Paper Website & Preprint</a></br>
-              🎞️ <a href="https://www.youtube.com/watch?v=MbEyyH2UB3s">Simulation and validation videos</a></br>
-            </p>
-            </br>
-            <p class="post-excerpt">
-              <b>Full Abstract</b></br>
-              This paper introduces a two-phase interfacial fluid model based on the impulse variable to capture complex vorticity-interface interactions. Our key idea is to leverage bidirectional flow map theory to enhance the transport accuracy of both vorticity and interfaces simultaneously and address their coupling within a unified Eulerian framework. At the heart of our framework is an impulse ghost fluid method to solve the two-phase incompressible fluid characterized by its interfacial dynamics. To deal with the history-dependent jump of gauge variables across a dynamic interface, we develop a novel path integral formula empowered by spatiotemporal buffers to convert the history-dependent jump condition into a geometry-dependent jump condition when projecting impulse to velocity. We demonstrate the efficacy of our approach in simulating and visualizing several interface-vorticity interaction problems with cross-phase vortical evolution, including interfacial whirlpool, vortex ring reflection, and leapfrogging bubble rings.
-            </p>
-          </div>
-        </div>
 
   <div id="post-pfm" class="post-item">
           <div class="post-content">
