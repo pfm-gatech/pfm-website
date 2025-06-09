@@ -310,7 +310,7 @@
           <div class="post-content">
             <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
             <h3>Leapfrog Flow Maps for Real-Time Fluid Simulation</h3>
-            <p class="post-meta">June 5, 2025 |</p>
+            <p class="post-meta">June 5, 2025 | Yuchen Sun</p>
             <img src="./pub_img/lfm.jpg" alt="SIGGRAPH 2025 LFM">
             <p class="post-excerpt">
               📢 We’re excited to share that our paper, “Leapfrog Flow Maps for Real-Time Fluid Simulation,”  co-authored with <a href="https://www.sandia.gov/ccr/staff/bart-g-van-bloemen-waanders/">Dr. van Bloemen Waanders</a> from DOE Sandia National Laboratories, has just been accepted to SIGGRAPH 2025! 
@@ -342,15 +342,9 @@
               <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
               <h3>Fluid Simulation on Compressible Flow Maps</h3>
               <!-- <p class="post-meta">June 5, 2025 &mdash; by Duowen Chen</p> -->
-              <p class="post-meta">June 5, 2025 |</p>
+              <p class="post-meta">June 5, 2025 | Duowen Chen </p>
               <img src="./pub_img/compressible.png" alt="SIGGRAPH 2025 Compressible">
               <p class="post-excerpt">
-                <!-- We are thrilled to announce that our paper "Fluid Simulation on Compressible Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
-                Our method extends previous flow map methods to a unified framework that supports a wide rage of phenomena ranging from small scale water striders swimming on the surface of a
-                pond, to large scale ships on vast oceans, and a Dragon capsule landing on Mars. Our method is verified to achieve accuracy caomparable with WENO schemes for high-Mach compressible flows under classical JCP benchmarks. 
-                meanwhile, giving better vorticity preservation quality for other compressible systems including shallow water equations and weakly compressible flows. </br>
-                Key highlights from our paper:</br> -->
-
                 Exciting news—our paper “Fluid Simulation on Compressible Flow Maps”, in collaboration with <a href="https://www.sandia.gov/ccr/staff/bart-g-van-bloemen-waanders/">Dr. van Bloemen Waanders</a> from DOE Sandia National Laboratories, has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
                 In this work, we bring existing flow-map techniques under one roof, handling phenomena from tiny water-striders skimming pond surfaces to ships on vast oceans and even a Dragon capsule’s descent onto Mars. We’ve validated our solver against standard JCP benchmarks, demonstrating accuracy on par with high-order WENO methods for supersonic compressible flows, while simultaneously improving vorticity preservation in shallow-water and weakly compressible scenarios.
                 </br>
@@ -361,7 +355,7 @@
                 ✅Weakly compressible simulation for typical incompressible cases (e.g., smoke, ink torus breakup).
                 </p>
                 <p>
-                Checkout our full paper and simulation video for more details! <b>Stay tuned to our code release!</b></br>
+                Check out our full paper and simulation video for more details! <b>Stay tuned to our code release!</b></br>
               </p>
               <p>
                 📄 <a href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf">Paper Preprint</a></br>
@@ -381,7 +375,7 @@
         <div class="post-content">
             <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
             <h3>EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</h3>
-            <p class="post-meta">June 6, 2025 |</p>
+            <p class="post-meta">June 6, 2025 | Zhiqi Li</p>
             <img src="./pub_img/25-edge.png" alt="SIGGRAPH 2025 LFM">
             <p class="post-excerpt">
               It’s a pleasure to report that our work, “EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps”, has just been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
@@ -409,7 +403,7 @@
           <div class="post-content">
             
             <h3>Cirrus: Adaptive Hybrid Particle-Grid Flow Maps on GPU</h3>
-            <p class="post-meta">June 5, 2025 |</p>
+            <p class="post-meta">June 5, 2025 | Mengdi Wang</p>
             <img src="./pub_img/25-cirrus.jpg" alt="SIGGRAPH 2025 Cirrus">
             <p class="post-excerpt">
               We are excited to announce that our paper "Cirrus: Adaptive Hybrid Particle-Grid Flow Maps on GPU" has been accepted to SIGGRAPH 2025! 🎉</br>
@@ -442,7 +436,7 @@
               <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
               <h3>Fluid Simulation on Vortex Particle Flow Maps</h3>
               <!-- <p class="post-meta">June 5, 2025 &mdash; by Sinan Wang</p> -->
-              <p class="post-meta">June 5, 2025 |</p>
+              <p class="post-meta">June 5, 2025 | Sinan Wang</p>
               <img src="./pub_img/vpfm.png" alt="SIGGRAPH 2025 VPFM">
               <p class="post-excerpt">
                 We are thrilled to announce that our paper "Fluid Simulation on Vortex Particle Flow Maps" has been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
@@ -468,6 +462,11 @@
               <b>Full Abstract</b></br>
               We propose the Vortex Particle Flow Map (VPFM) method to simulate incompressible flow with complex vortical evolution in the presence of dynamic solid boundaries. The core insight of our approach is that vorticity is an ideal quantity for evolution on particle flow maps, enabling significantly longer flow map distances compared to other fluid quantities like velocity or impulse. To achieve this goal, we developed a hybrid Eulerian-Lagrangian representation that evolves vorticity and flow map quantities on vortex particles, while reconstructing velocity on a background grid. The method integrates three key components: (1) a vorticity-based particle flow map framework, (2) an accurate Hessian evolution scheme on particles, and (3) a solid boundary treatment for no-through and no-slip conditions in VPFM. These components collectively allow a substantially longer flow map length (3-12 times longer) than the state-of-the-art, enhancing vorticity preservation over extended spatiotemporal domains. We validated the performance of VPFM through diverse simulations, demonstrating its effectiveness in capturing complex vortex dynamics and turbulence phenomena.
               </p>
+
+              <p class="post-excerpt">
+              <b>Next Steps</b></br>
+              After this preliminary investigation, we will continue to explore the efficacy of the VPFM method in simulating multi-scale and multi-physics problems. One the one hand, we will explore the potential of the significantly extended flow map lengths of vortex particles compared to other flow map techniques to facilitate multi-scale vortex structure evolution. On the other hand, we will focus on developing multi-physics coupling frameworks and investigating a variety of vortex–solid interaction phenomena. One of the primary objectives of our ongoing research is to extend the VPFM method from the computer graphics community to the broader computational physics community.
+              </p>
             </div>
           </div>
 
@@ -477,7 +476,7 @@
     <h3>Six SIGGRAPH 2025 Papers on PFM!</h3>
     <p class="post-meta">June 1, 2025 | Bo Zhu </p>
     <p class="post-excerpt">
-      🚀 We are excited to share that our group has six papers accepted for presentation at SIGGRAPH 2025! These papers span a broad spectrum of topics centered around PFM, including incompressible and compressible flow simulations, hybrid particle-grid schemes, vortex particle methods, Clebsch flow maps, GPU multigrid and octrees, and buffer-free gradient techniques. In particular, we would like to highlight the two collaborative projects with the DOE's Sandia National Laboratory on building real-time and compressible flow-map solvers for high-fidelity and high-performance fluid simulators. These milestones reflect our group's ongoing efforts to advance PFM as a unifying simulation framework across computer graphics and scientific computing. Stay tuned for more results and open-source releases in the coming months!
+      🚀 We are excited to share that our group has six journal papers accepted by SIGGRAPH 2025! These papers span a broad spectrum of topics centered around PFM, including incompressible and compressible flow simulations, hybrid particle-grid schemes, vortex particle methods, Clebsch flow maps, GPU multigrid and octrees, and buffer-free gradient techniques. In particular, we would like to highlight the two collaborative projects with the DOE's Sandia National Laboratory on building real-time and compressible flow-map solvers for high-fidelity and high-performance fluid simulators. These milestones reflect our group's ongoing efforts to advance PFM as a unifying simulation framework across computer graphics and scientific computing. Stay tuned for more results and open-source releases in the coming months!
     </p>
     <p class="post-excerpt">
       📌 The accepted papers include:
@@ -497,12 +496,9 @@
           <div class="post-content">
             <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
             <h3>An Impulse Ghost Fluid Method for Simulating Two-Phase Flows</h3>
-            <p class="post-meta">June 5, 2025 |</p>
+            <p class="post-meta">June 5, 2025 | Yuchen Sun</p>
             <img src="./pub_img/igfm.jpg" alt="SIGGRAPH Asia 2024 IGFM">
             <p class="post-excerpt">
-             <!-- 🔥🔥Checkout our recent published paper on SIGGRAPH ASIA 2024!🔥🔥</br> 
-              We introduce a new two-phase fluid model based on impulse dynamics that captures these complex behaviors with striking accuracy. By combining bidirectional flow maps and a novel ghost fluid method, we unify vorticity and interface motion in a single Eulerian framework. From whirlpools to bubble ring leapfrogging, our simulations bring these phenomena to life</br>
-              Key highlights from our paper:</br> -->
               🎉 We’re proud to share our latest work accepted at SIGGRAPH ASIA 2024! 🎉</br>
               In this paper, we present a two-phase fluid model driven by impulse dynamics that reproduces intricate flow behaviors with unmatched fidelity. By combining bidirectional flow maps with a cutting-edge ghost fluid method, we seamlessly integrate vorticity transport and interface motion within a single Eulerian framework. From swirling whirlpools to bubble-ring leapfrogging, our simulations bring these phenomena vividly to life.</br>
               <b>Key highlights from our paper:</b></br>
@@ -530,12 +526,9 @@
               <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
               <h3>An Eulerian Vortex Method on Flow Maps</h3>
               <!-- <p class="post-meta">June 5, 2025 &mdash; by Sinan Wang</p> -->
-              <p class="post-meta">Dec 1, 2024 |</p>
+              <p class="post-meta">Dec 1, 2024 | Sinan Wang</p>
               <img src="./pub_img/evm_post.jpg" alt="SIGGRAPH Asia 2024 EVM">
               <p class="post-excerpt">
-                <!-- We are thrilled to announce that our paper "An Eulerian Vortex Method on Flow Maps" has been accepted to SIGGRAPH Asia 2024! 🎉🎉🎉</br> 
-                This work introduces a new Eulerian vortex simulation framework grounded in flow maps. Unlike traditional Lagrangian or velocity-based solvers, our method transports vorticity directly on the grid using a bi-directional marching scheme, achieving both numerical stability and visual fidelity for complex vortical structures.
-                Central to our system is a new vorticity-to-velocity solver that enforces solid boundary conditions without relying on streamfunctions, enabling high-quality simulations of vortex phenomena such as leapfrogging, vortex shedding, and solid-fluid interactions—all fully in Eulerian form.</br> -->
                 Great news—our paper “An Eulerian Vortex Method on Flow Maps” has just been accepted to SIGGRAPH Asia 2024! 🎉🎉🎉</br> 
 
                 In this study, we unveil a grid-based vortex simulation built on flow maps—stepping away from classic Lagrangian or velocity-centric approaches. By marching vorticity back and forth across the mesh, we deliver both rock-solid stability and striking detail in swirling flows.
@@ -569,7 +562,7 @@
               <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
               <h3>Solid-Fluid Interaction on Particle Flow Maps</h3>
               <!-- <p class="post-meta">June 5, 2025 &mdash; by Sinan Wang</p> -->
-              <p class="post-meta">Dec 1, 2024 |</p>
+              <p class="post-meta">Dec 1, 2024 | Duowen Chen</p>
               <img src="./pub_img/sfi.png" alt="SIGGRAPH Asia 2024 sfi">
               <p class="post-excerpt">
                 🔥🔥Checkout our recent published paper on SIGGRAPH ASIA 2024!🔥🔥</br> 
@@ -602,7 +595,7 @@
           <div class="post-content">
             <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2024)</div>
             <h3>Eulerian-Lagrangian Fluid Simulation on Particle Flow Maps</h3>
-            <p class="post-meta">July 19, 2024 |</p>
+            <p class="post-meta">July 19, 2024 | Junwei Zhou</p>
             <img src="./pub_img/pfm.jpg" alt="SIGGRAPH 2024 PFM">
             <p class="post-excerpt">
               🎉 We’re excited to announce that our latest work has been accepted to SIGGRAPH 2024! 🎉</br>
@@ -631,7 +624,7 @@
     </main>
 
     <footer>
-      <p>&copy; Particle Flow Map @ Georgia Tech.</p>
+      <p>&copy; Particle Flow Map @ Georgia Tech</p>
     </footer>
   </div>
 
