@@ -274,7 +274,7 @@
     <button id="prev" class="slide-btn">‹</button>
     <div class="header-content">
       <h1>Particle Flow Map</h1>
-      <p>A Unified Fluid Simulation Method for Science and Graphics</p>
+      <p>A Unified Fluid Simulation Method across Graphics and Science</p>
     </div>
     <button id="next" class="slide-btn">›</button>
   </header>
@@ -283,7 +283,6 @@
   <aside class="post-nav">
     <h2>Jump to Post</h2>
     <ul>
-      
       <li><a href="#post-lfm">Leapfrog Flow Maps for Real-Time Fluid Simulation</a></li>
       <li><a href="#post-compressible">Fluid Simulation on Compressible Flow Maps</a></li>
       <li><a href="#post-edge">EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</a></li>
@@ -295,7 +294,7 @@
       <li><a href="#post-pfm">Eulerian-Lagrangian Fluid Simulation on Particle Flow Maps</a></li>
     </ul>
   </aside>
-
+  <p>This webpage maintains the most recent updates on the research outcomes of the Particle Flow Map (PFM) method, a framework developed for simulating complex fluid and solid dynamics. Our research group led by Prof. <a href="https://faculty.cc.gatech.edu/~bozhu/index.html">Bo Zhu</a> at Georgia Tech focuses on developing geometric representations and numerical algorithms to simulate physical systems at the intersection of computer graphics and computational physics. Since early 2023, we have been investigating the mathematical foundations, algorithmic implementations, and real-world applications of the PFM method across various fluid flow simulation problems, with the goal of bridging visual computing and scientific computing. This site features recent papers, open-source libraries, and benchmarks that reflect our ongoing efforts to extend the scope of PFM into an effective simulation tool for both graphics and physics communities.</p>
   <div class="content">
     <main>
       <section id="posts">
@@ -309,7 +308,7 @@
             <img src="./pub_img/lfm.jpg" alt="SIGGRAPH 2025 LFM">
             <p class="post-excerpt">
               📢 We’re excited to share that our paper, “Leapfrog Flow Maps for Real-Time Fluid Simulation,”  co-authored with <a href="https://www.sandia.gov/ccr/staff/bart-g-van-bloemen-waanders/">Dr. van Bloemen Waanders</a> from DOE Sandia National Laboratories, has just been accepted to SIGGRAPH 2025! 
-              Leapfrog Flow Maps (LFM) combines velocity and impulse updates via a leapfrog integrator, and all the heavy lifting is handled by a matrix-free AMGPCG solver tuned for GPUs. The result? Real-time delta-wingtip vortex simulations at 256 × 128 × 128 resolution on a single RTX 4090.</br>
+              Leapfrog Flow Maps (LFM) combine velocity and impulse updates via a leapfrog integrator, and all the heavy lifting is handled by a matrix-free AMGPCG solver tuned for GPUs. The result? Real-time delta-wingtip vortex simulations at 256 × 128 × 128 resolution on a single RTX 4090.</br>
               Key highlights from our paper:</br>
               📌 A hybrid velocity-impulse time integrator to reduce both the projection times and the flow-map marching steps</br>
               📌 A fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver on GPU</br>
