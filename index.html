@@ -331,8 +331,13 @@
             </br>
             <p class="post-excerpt">
               <b>Full Abstract</b></br>
-              We propose Leapfrog Flow Maps (LFM) to simulate incompressible fluids with rich vortical flows in real time. Our key idea is to use a hybrid velocityimpulse scheme enhanced with leapfrog method to reduce the computational workload of impulse-based flow map methods, while possessing strong ability to preserve vortical structures and fluid details. In order to accelerate the impulse-to-velocity projection, we develop a fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver with customized GPU optimization, which makes projection comparable with impulse evolution in terms of time cost. We demonstrate the performance of our method and its efficacy in a wide range of examples and experiments, such as real-time simulated burning fire ball and delta wingtip vortices.
+              We propose Leapfrog Flow Maps (LFMs) to simulate incompressible fluids with rich vortical flows in real-time. Our key idea is to utilize a hybrid velocity-impulse scheme, enhanced with the leapfrog method, to reduce the computational workload of impulse-based flow map methods while maintaining a strong ability to preserve vortical structures and fluid details. To accelerate the impulse-to-velocity projection, we develop a fast matrix-free Algebraic Multigrid Preconditioned Conjugate Gradient (AMGPCG) solver with customized GPU optimization, which makes the projection comparable to impulse evolution in terms of time cost. We demonstrate the performance of our method and its efficacy in a wide range of examples and experiments, including real-time simulated burning fireballs and delta wingtip vortices.
             </p>
+
+            <p class="post-excerpt">
+              <b>Next Steps</b></br>
+              Following this work, we will continue our collaborative efforts by further exploring real-time CFD techniques, providing high-speed and high-fidelity simulation solutions to address various vorticity-dominant flow phenomena. Combustive dynamics on flow maps will be one of our particular focuses for the next steps.
+              </p>
           </div>
         </div>
 
@@ -367,6 +372,11 @@
               <p class="post-excerpt">
               <b>Full Abstract</b></br>
               This paper presents a unified compressible flow map framework designed to accommodate diverse compressible flow systems, including high-Mach-number flows (e.g., shock waves and supersonic aircraft), weakly compressible systems (e.g., smoke plumes and ink diffusion), and incompressible systems evolving through compressible acoustic quantities (e.g., free-surface shallow water). At the core of our approach is a theoretical foundation for compressible flow maps based on Lagrangian path integrals, a novel advection scheme for the conservative transport of density and energy, and a unified numerical framework for solving compressible flows with varying pressure treatments. We validate our method across three representative compressible flow systems, characterized by varying fluid morphologies, governing equations, and compressibility levels, demonstrating its ability to preserve and evolve spatiotemporal features such as vortical structures and wave interactions governed by different flow physics. Our results highlight a wide range of novel phenomena, from ink torus breakup to delta wing tail vortices and vortex shedding on free surfaces, significantly expanding the range of fluid systems that flow-map methods can handle.</br>
+              </p>
+
+            <p class="post-excerpt">
+              <b>Next Steps</b></br>
+Following this preliminary study, we will continue our collaborative efforts to develop a high-fidelity combustion simulator by coupling incompressible and compressible flow map solvers, aiming to capture a wide range of vorticity-induced combustion dynamics and vortical structures. Particular emphasis will be placed on extending the current solver to large-scale domains for simulating real-world flow phenomena.
               </p>
             </div>
           </div>
@@ -465,7 +475,7 @@
 
               <p class="post-excerpt">
               <b>Next Steps</b></br>
-              After this preliminary investigation, we will continue to explore the efficacy of the VPFM method in simulating multi-scale and multi-physics problems. One the one hand, we will explore the potential of the significantly extended flow map lengths of vortex particles compared to other flow map techniques to facilitate multi-scale vortex structure evolution. On the other hand, we will focus on developing multi-physics coupling frameworks and investigating a variety of vortex–solid interaction phenomena. One of the primary objectives of our ongoing research is to extend the VPFM method from the computer graphics community to the broader computational physics community.
+              After this preliminary investigation on applying the flow map scheme to vortex particles, we will continue to explore the efficacy of the VPFM method in simulating multi-scale and multi-physics problems. On the one hand, we will explore the potential of the significantly extended flow map lengths of vortex particles compared to other flow map techniques to facilitate multi-scale vortex structure evolution. On the other hand, we will focus on developing multi-physics coupling frameworks and investigating a variety of vortex–solid interaction phenomena. One of the primary objectives of our ongoing research is to extend the VPFM method from the computer graphics community to the broader computational physics community.
               </p>
             </div>
           </div>
