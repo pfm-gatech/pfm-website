@@ -382,11 +382,37 @@ Following this preliminary study, we will continue our collaborative efforts to 
           </div>
 
           <div id="post-edge" class="post-item">
+            <div class="post-content">
+                <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
+                <h3>Clebsch Gauge Fluid on Particle Flow Maps</h3>
+                <p class="post-meta">June 6, 2025 | Zhiqi Li</p>
+                <img src="./pub_img/25-clebsch.jpg" alt="SIGGRAPH 2025 Clebsch">
+                <p class="post-excerpt">
+                  It's a pleasure to report that our work, “Clebsch Gauge Fluid on Particle Flow Maps”, has just been accepted to SIGGRAPH 2025 with Best Paper Award Honorable Mention! 🎉🎉🎉</br> 
+                  Our Clebsch Gauge-based flow map solver uses 0-form wave functions as the mapping object of the flow map, addressing the long-standing challenges in advecting gradients in PFM. It successfully preserves strong vorticity even at low resolutions (32~64 grid size), without introducing significant time or memory overhead.</br>
+                  <b>Here are the standout points from our work:</b></br>
+                  🌟 Clebsch-Based PFM Framework: By leveraging the point-based nature of Clebsch wave functions, we establish a new PFM framework that achieves state-of-the-art performance in vorticity-preserving simulations, and can reproduce classical vortex ring structures even at extremely low resolutions.</br>
+                  🌟 Gauge Transformation for Clebsch Wave Functions: We develop a novel gauge transformation that aligns the evolution of Clebsch wave functions with the particle flow map (PFM) framework, enabling accurate advection of scalar quantities and their gradients.</br>
+                  🌟 Velocity Reconstruction Scheme: We introduce a robust method for converting Clebsch wave functions into velocity fields, significantly improving simulation accuracy and fidelity in vorticity-dominated scenarios.</br>
+
+                </p>
+                <p>
+                  🎞️ <a href="https://www.youtube.com/watch?v=U0iTO8tfRK0">Simulation and validation videos</a></br>
+                  💻 <a href="">Source Code [Coming Soon]</a></br>
+                </p>
+                </br>
+                <p class="post-excerpt">
+                  <b>Full Abstract</b></br>
+                  We propose a novel gauge fluid solver that evolves Clebsch wave functions on particle flow maps (PFMs). The key insight underlying our work is that particle flow maps exhibit superior performance in transporting point elements—such as Clebsch components—compared to line and surface elements, which were the focus of previous methods relying on impulse and vortex gauge variables for flow maps. Our Clebsch PFM method incorporates three main contributions: a novel gauge transformation enabling accurate transport of wave functions on particle flow maps, an enhanced velocity reconstruction method for coarse grids, and a PFM-based simulation framework designed to better preserve fine-scale flow structures. We validate the Clebsch PFM method through a wide range of benchmark tests and simulation examples, ranging from leapfrogging vortex rings and vortex reconnections to Kelvin–Helmholtz instabilities, demonstrating that our method outperforms its impulse- or vortex-based counterparts on particle flow maps, particularly in preserving and evolving small-scale features.
+              </div>
+            </div>
+
+          <div id="post-edge" class="post-item">
         <div class="post-content">
             <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
             <h3>EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps</h3>
             <p class="post-meta">June 6, 2025 | Zhiqi Li</p>
-            <img src="./pub_img/25-edge.png" alt="SIGGRAPH 2025 LFM">
+            <img src="./pub_img/25-edge.png" alt="SIGGRAPH 2025 EDGE">
             <p class="post-excerpt">
               It’s a pleasure to report that our work, “EDGE: Epsilon-Difference Gradient Evolution for Buffer-Free Flow Maps”, has just been accepted to SIGGRAPH 2025! 🎉🎉🎉</br> 
               Our Epsilon Difference Gradient Evolution (EDGE) solver marries a Hermite-based flow-map approach with a tetrahedral epsilon-difference scheme to eliminate velocity buffers entirely.
