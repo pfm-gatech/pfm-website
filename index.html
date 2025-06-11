@@ -381,7 +381,7 @@ Following this preliminary study, we will continue our collaborative efforts to 
             </div>
           </div>
 
-          <div id="post-edge" class="post-item">
+          <div id="post-clebsch" class="post-item">
             <div class="post-content">
                 <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
                 <h3>Clebsch Gauge Fluid on Particle Flow Maps</h3>
@@ -555,6 +555,32 @@ Following this preliminary study, we will continue our collaborative efforts to 
             </p>
           </div>
         </div>
+
+        <div id="post-laden" class="post-item">
+          <div class="post-content">
+              <div class="post-banner">ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</div>
+              <h3>Particle-Laden Fluid on Flow Maps</h3>
+              <p class="post-meta">June 6, 2025 | Zhiqi Li</p>
+              <img src="./pub_img/24-laden.jpg" alt="SIGGRAPH Asia 2024 Laden">
+              <p class="post-excerpt">
+                It's a pleasure to share that our work, "Particle-Laden Fluid on Flow Maps", has just been accepted to SIGGRAPH Aisa 2024 as Best Paper Award! 🎉</br>
+                Our method introduces a novel framework for simulating ink as a particle-laden viscous flow, bridging the gap between classical flow maps and fully viscous Navier–Stokes simulations with drag and sediment coupling. It is capable of capturing intricate vorticity–viscosity interactions and reproducing a wide range of complex ink behaviors, including the bulging and breakup of viscous tails, the formation and disintegration of toroidal structures, and the coalescence and fractal-like branching of sedimenting drops.
+                <b>Here are the standout points from our work:</b></br>
+                🌟 Our system faithfully reproduces ink tail breakup, torus formation and collapse, as well as fractal-like branching, capturing complex behaviors like vortex bulbs and hierarchical viscous structures.</br>
+                🌟 We propose a novel path integral formulation for the Navier–Stokes equations that accurately incorporates viscosity and drag forces, enabling the simulation of dissipative particle-laden flows.</br>
+                🌟 We introduce a new coupling mechanism that integrates long-range flow maps, short-range inter-particle forces, and a local projection step by solving variable-coefficient Poisson equations, achieving physically consistent interactions across scales.</br>
+                🌟 We develop a unified Eulerian–Lagrangian solver for particle-laden flows, capable of delivering state-of-the-art ink diffusion simulations that capture intricate vorticity–viscosity interactions such as vortex bulbs, viscous tails, and hierarchical structures.</br>
+              </p>
+              <p>
+                🎞️ <a href="https://www.youtube.com/watch?v=JzozR1t-sIE">Simulation and validation videos</a></br>
+                💻 <a href="">Source Code [Coming Soon]</a></br>
+              </p>
+              </br>
+              <p class="post-excerpt">
+                <b>Full Abstract</b></br>
+                We propose a novel framework for simulating ink as a particle-laden flow using particle flow maps. Our method addresses the limitations of existing flow-map techniques, which struggle with dissipative forces like viscosity and drag, thereby extending the application scope from solving the Euler equations to solving the Navier-Stokes equations with accurate viscosity and laden-particle treatment. Our key contribution lies in a coupling mechanism for two particle systems, coupling physical sediment particles and virtual flow-map particles on a background grid by solving a Poisson system. We implemented a novel path integral formula to incorporate viscosity and drag forces into the particle flow map process. Our approach enables state-of-the-art simulation of various particle-laden flow phenomena, exemplified by the bulging and breakup of suspension drop tails, torus formation, torus disintegration, and the coalescence of sedimenting drops. In particular, our method delivered high-fidelity ink diffusion simulations by accurately capturing vortex bulbs, viscous tails, fractal branching, and hierarchical structures.
+            </div>
+          </div>
 
         <!-- Post Item 3 -->
           <div id="post-evm" class="post-item">
